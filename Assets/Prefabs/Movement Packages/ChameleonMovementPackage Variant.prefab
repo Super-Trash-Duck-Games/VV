@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2976860144674041969
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2287813466187807106, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: adjustDistanceRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287813466187807106, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: tongueExtensionSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287813466187807106, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: grappleDetectionLenght
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287813466187807106, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: rbLinearDamplingWhileGrappled
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659553222058812986, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_Name
+      value: ChameleonMovementPackage Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.12867
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.01987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880129821666588751, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
