@@ -22,6 +22,9 @@ public abstract class Entity : MonoBehaviour
     [Header("Ground Detection")]
     [field: SerializeField] public bool Grounded { get; protected set; }
     public Action<bool> OnGrounded;
+    [SerializeField] protected LayerMask _groundLM;
+    [SerializeField] protected float _groundDetectionLenght = .2f;
+
 
     protected virtual void Start()
     {
@@ -61,23 +64,46 @@ public abstract class Entity : MonoBehaviour
     protected virtual void LateUpdate()
     {
         _controller.FauxLateUpdate();
+        GroundDetection();
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    /*  protected virtual void OnCollisionEnter2D(Collision2D collision)
+      {
+          if (collision.gameObject.layer == 6)
+          {
+              Grounded = true;
+              OnGrounded?.Invoke(true);
+          }
+      }
+
+      protected virtual void OnCollisionExit2D(Collision2D collision)
+      {
+          if (collision.gameObject.layer == 6)
+          {
+              OnGrounded?.Invoke(false);
+              Grounded = false;
+          }
+      }*/
+
+    protected void GroundDetection()
     {
-        if (collision.gameObject.layer == 6)
+        RaycastHit2D hit = Physics2D.Linecast(transform.position + transform.up * .2f, transform.position + -transform.up * _groundDetectionLenght, _groundLM);
+
+        if (hit.collider != null)
         {
-            Grounded = true;
-            OnGrounded?.Invoke(true);
+            if (!Grounded)
+            {
+                Grounded = true;
+                OnGrounded?.Invoke(true);
+            }
         }
-    }
-
-    protected virtual void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 6)
+        else
         {
-            OnGrounded?.Invoke(false);
-            Grounded = false;
+            if (Grounded)
+            {
+                OnGrounded?.Invoke(false);
+                Grounded = false;
+            }
         }
     }
 
@@ -91,5 +117,11 @@ public abstract class Entity : MonoBehaviour
         yield return new WaitForSeconds(morphTime);
         gameObject.SetActive(false);
         kumkum.gameObject.SetActive(true);
+    }
+
+    protected virtual void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position + transform.up * .2f, transform.position + -transform.up * _groundDetectionLenght);
     }
 }

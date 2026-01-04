@@ -16,5 +16,11 @@ public class KKController : Controller
 
         if (Input.GetButtonUp("Crouch"))
             _kkModel.CrouchRelease();
+
+        if (Input.GetButtonDown("Jump"))
+            _kkModel.WallJump();
+
+        if (Input.GetButtonUp("Special")) _kkModel.SpecialRelease();
+
     }
 }

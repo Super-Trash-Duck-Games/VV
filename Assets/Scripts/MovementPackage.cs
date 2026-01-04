@@ -19,6 +19,10 @@ public class MovementPackage : MonoBehaviour
     public float weight;
     public float jumpForce;
     public float jumpCutoff;
+    [Header("Kumkum")]
+    public Vector2 wallJumpForce;
+    public float specialHangTime;
+    public float specialStompForce;
     [Header("Gargantuar")]
     public float punchDash;
     public float dashDelay;

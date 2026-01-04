@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0423ada2f6a35d5419f1ae899127781c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementPackage
-  speed: 5
+  speed: 6
   runSpeed: 10
   turnSpeed: 5
   deceleration: 4.88
@@ -53,3 +53,13 @@ MonoBehaviour:
   weight: 4
   jumpForce: 7
   jumpCutoff: 10
+  wallJumpForce: {x: 6, y: 9}
+  specialHangTime: 1.2
+  specialStompForce: 20
+  punchDash: 0
+  dashDelay: 0
+  hitDuration: 0
+  grappleDetectionLenght: 0
+  adjustDistanceRate: 0
+  rbLinearDamplingWhileGrappled: 0
+  tongueExtensionSpeed: 0

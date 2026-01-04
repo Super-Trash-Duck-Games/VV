@@ -124,7 +124,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cfaed3e21995f6449a4aa203260b4ae3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -202,7 +202,14 @@ MonoBehaviour:
   type: 0
   _mpGO: {fileID: 2659553222058812986, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
   <Grounded>k__BackingField: 0
+  _groundLM:
+    serializedVersion: 2
+    m_Bits: 64
+  _groundDetectionLenght: 0.2
   crouching: 0
+  _wallCast: {x: 0.4, y: 0.37}
+  _touchingWall: 0
+  _kkPM: {fileID: 6200000, guid: cfaed3e21995f6449a4aa203260b4ae3, type: 2}
 --- !u!114 &2703508515432812661
 MonoBehaviour:
   m_ObjectHideFlags: 0

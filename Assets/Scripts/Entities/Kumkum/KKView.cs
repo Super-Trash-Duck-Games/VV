@@ -4,7 +4,9 @@ public class KKView : View
 {
     private KKModel _kkModel;
     private Kumkum _kumKum;
-    public KKView(Animator anim, Kumkum entity, KKModel model) : base(anim, entity, model)
+    [SerializeField] private ParticleSystem _stompPS;
+
+    public KKView(Animator anim, Kumkum entity, KKModel model, ParticleSystem stompPS) : base(anim, entity, model)
     {
         _anim = anim;
         _kumKum = entity;
@@ -15,6 +17,9 @@ public class KKView : View
         _kkModel.OnFall += Fall;
         _kumKum.OnGrounded += Grounded;
         _kkModel.OnCrouch += Crouch;
+        _kumKum.OnWalled += OnWalled;
+        _kkModel.OnStomp += OnStomp;
+        _stompPS = stompPS;
     }
 
 
@@ -24,5 +29,17 @@ public class KKView : View
             _anim.SetBool("Crouching", true);
         else
             _anim.SetBool("Crouching", false);
+    }
+
+    private void OnWalled(bool walled)
+    {
+        if (walled) _anim.SetBool("Wall", true);
+        else _anim.SetBool("Wall", false);
+    }
+
+    private void OnStomp()
+    {
+        _anim.SetTrigger("Stomp");
+        _stompPS.Play();
     }
 }
