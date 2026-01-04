@@ -21,11 +21,13 @@ public class DizzyState : State
     {
         _dizzyTimer = 0;
         _view.Dizzy(true);
+        _aie.isDizzy = true;
     }
 
     public override void OnExit()
     {
         _view.Dizzy(false);
+        _aie.isDizzy = false;
     }
 
     public override void OnFixedUpdate()

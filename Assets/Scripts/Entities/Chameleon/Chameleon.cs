@@ -9,6 +9,7 @@ public class Chameleon : Entity
     //private CHView _chView;
     private CHController _chController;
 
+    protected new CHPackage _ep;
     [Header("Grapple")]
     public List<Rigidbody2D> grapplePoints = new List<Rigidbody2D>();
     public Rigidbody2D closestGrapplePoint;
@@ -26,7 +27,7 @@ public class Chameleon : Entity
         spring = GetComponent<SpringJoint2D>();
 
         if (_circleCol == null) _circleCol = GetComponent<CircleCollider2D>();
-        _circleCol.radius = _mp.grappleDetectionLenght;
+        _circleCol.radius = _ep.grappleDetectionLenght;
         spring.enabled = false;
         if (_lr == null) _lr = GetComponent<LineRenderer>();
         _lr.enabled = false;
@@ -34,7 +35,7 @@ public class Chameleon : Entity
 
     protected override void MVC()
     {
-        _chModel = new CHModel(this, _rb2d, _mpGO.GetComponent<MovementPackage>());
+        _chModel = new CHModel(this, _rb2d, _mpGO.GetComponent<CHPackage>());
         _view = new CHView(_anim, this, _chModel);
         _chController = new CHController(_chModel);
     }
@@ -47,6 +48,7 @@ public class Chameleon : Entity
     protected override void LateUpdate()
     {
         _chController.FauxLateUpdate();
+        GroundDetection();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,7 +95,7 @@ public class Chameleon : Entity
         spring.enabled = true;
         spring.connectedBody = closestGrapplePoint;
         currentGrapplePoint = closestGrapplePoint;
-        _rb2d.linearDamping = _mp.rbLinearDamplingWhileGrappled;
+        _rb2d.linearDamping = _ep.rbLinearDamplingWhileGrappled;
 
         _renderLine = StartCoroutine(LineRender());
     }
@@ -109,7 +111,7 @@ public class Chameleon : Entity
             _lr.SetPosition(0, _lrStartPoint.transform.position);
             current = Vector2.Lerp(_lrStartPoint.transform.position, currentGrapplePoint.transform.position, lenght);
             _lr.SetPosition(1, current);
-            lenght += Time.deltaTime * _mp.tongueExtensionSpeed;
+            lenght += Time.deltaTime * _ep.tongueExtensionSpeed;
             yield return null;
         }
 

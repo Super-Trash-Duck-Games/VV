@@ -55,6 +55,11 @@ MonoBehaviour:
   type: 2
   _mpGO: {fileID: 983842003997414987, guid: 34d22f733cd6ef645aad3fbb43e3089c, type: 3}
   <Grounded>k__BackingField: 0
+  _groundLM:
+    serializedVersion: 2
+    m_Bits: 64
+  _groundDetectionLenght: 0.2
+  mirrored: 0
   grapplePoints: []
   closestGrapplePoint: {fileID: 0}
   currentGrapplePoint: {fileID: 0}
@@ -119,7 +124,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 8.960006
+  m_Distance: 0.005
   m_DampingRatio: 1
   m_Frequency: 1
 --- !u!58 &3716192228629051600

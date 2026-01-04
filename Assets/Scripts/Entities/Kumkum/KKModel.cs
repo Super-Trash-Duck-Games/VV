@@ -19,16 +19,31 @@ public class KKModel : Model
     public Action OnStomp;
     private Collider2D _stompCollider;
 
-    public KKModel(Kumkum entity, Rigidbody2D rb2d, MovementPackage mp, PhysicsMaterial2D kkPM, Collider2D stompCollider) : base(entity, rb2d, mp)
+    public Action OnBite;
+    private KKPackage _package;
+    private Coroutine _bite;
+    private BiteDetector _biteDetector;
+    private AIEnemy _enemy;
+    private bool _biting;
+    public KKModel(Kumkum entity, Rigidbody2D rb2d, KKPackage kp, PhysicsMaterial2D kkPM, Collider2D stompCollider) : base(entity, rb2d, kp)
     {
         _kumKum = entity;
         _rb2d = rb2d;
-        _mp = mp;
+        _package = kp;
         _kkPM = kkPM;
 
         _kumKum.OnGrounded += OnGrounded;
         _kumKum.OnWalled += OnWalled;
         _stompCollider = stompCollider;
+
+        _biteDetector = _kumKum.GetComponentInChildren<BiteDetector>();
+        _biteDetector.OnDetectEnemy += OnDetectEnemy;
+    }
+
+    public override void Move(float x)
+    {
+        if (_biting) return;
+        base.Move(x);
     }
 
     protected override void OnGrounded(bool grounded)
@@ -68,9 +83,9 @@ public class KKModel : Model
         if (!_walled) return;
 
         if (_kumKum.transform.localScale.x > 0)
-            _rb2d.AddForce(_kumKum.transform.up * _mp.wallJumpForce.y + Vector3.left * _mp.wallJumpForce.x, ForceMode2D.Impulse);
+            _rb2d.AddForce(_kumKum.transform.up * _package.wallJumpForce.y + Vector3.left * _package.wallJumpForce.x, ForceMode2D.Impulse);
         else
-            _rb2d.AddForce(_kumKum.transform.up * _mp.wallJumpForce.y + Vector3.right * _mp.wallJumpForce.x, ForceMode2D.Impulse);
+            _rb2d.AddForce(_kumKum.transform.up * _package.wallJumpForce.y + Vector3.right * _package.wallJumpForce.x, ForceMode2D.Impulse);
 
 
         OnJump?.Invoke();
@@ -80,6 +95,7 @@ public class KKModel : Model
 
     public override void Jump()
     {
+        if (_biting) return;
         if (_crouching) return;
         base.Jump();
     }
@@ -87,6 +103,8 @@ public class KKModel : Model
 
     public void Crouch()
     {
+        if (_biting) return;
+
         if (!_entity.Grounded)
         {
             _crouchHalt = true;
@@ -112,12 +130,86 @@ public class KKModel : Model
 
     public override void Special()
     {
-        _specialHanging = true;
-        _kumKum.StartCoroutine(SpecialHang());
+        if (_kumKum.Grounded)
+        {
+            if (_bite == null)
+            {
+                if (!_kumKum.mirrored)
+                    _bite = _kumKum.StartCoroutine(BiteRight());
+                else
+                    _bite = _kumKum.StartCoroutine(BiteLeft());
+            }
+        }
+        else
+            _kumKum.StartCoroutine(SpecialHang());
+    }
+
+    private IEnumerator BiteRight()
+    {
+        _biting = true;
+        _biteDetector.TurnOn();
+        OnBite?.Invoke();
+        while (_kumKum.transform.localScale.x < _package.sizeGrowth - .5f)
+        {
+            _kumKum.transform.localScale = Vector3.Lerp(_kumKum.transform.localScale, Vector3.one * _package.sizeGrowth, _package.attackSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        if (_enemy != null) _enemy.Death();
+
+        while (_kumKum.transform.localScale.x > 1.1)
+        {
+            _kumKum.transform.localScale = Vector3.Lerp(_kumKum.transform.localScale, Vector3.one, _package.attackSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        _kumKum.transform.localScale = Vector3.one;
+        _biteDetector.TurnOff();
+
+        _bite = null;
+        _biting = false;
+
+        MorphManager.Instance.Morph(_enemy.entityType);
+        _enemy = null;
+    }
+
+    private IEnumerator BiteLeft()
+    {
+        _biting = true;
+        _biteDetector.TurnOn();
+        OnBite?.Invoke();
+        while (_kumKum.transform.localScale.x > -_package.sizeGrowth + .5f)
+        {
+            _kumKum.transform.localScale = Vector3.Lerp(_kumKum.transform.localScale, new Vector3(-_package.sizeGrowth, _package.sizeGrowth), _package.attackSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        if(_enemy != null) _enemy.Death();
+
+        while (_kumKum.transform.localScale.x < -1.1)
+        {
+            _kumKum.transform.localScale = Vector3.Lerp(_kumKum.transform.localScale, new Vector3(-1, 1), _package.attackSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        _kumKum.transform.localScale = new Vector3(-1, 1);
+        _biteDetector.TurnOff();
+
+        _bite = null;
+        _biting = false;
+
+        MorphManager.Instance.Morph(_enemy.entityType);
+        _enemy = null;
+    }
+
+    private void OnDetectEnemy(AIEnemy enemy)
+    {
+        _enemy = enemy;
     }
 
     private IEnumerator SpecialHang()
     {
+        _specialHanging = true;
         float timer = 0;
         while (_specialHanging)
         {
@@ -125,14 +217,14 @@ public class KKModel : Model
 
             _rb2d.linearVelocity = Vector2.zero;
 
-            if (timer > _mp.specialHangTime)
+            if (timer > _package.specialHangTime)
                 yield break;
 
             yield return null;
         }
 
         _stompCollider.enabled = true;
-        _rb2d.AddForce(_kumKum.transform.up * -_mp.specialStompForce, ForceMode2D.Impulse);
+        _rb2d.AddForce(_kumKum.transform.up * -_package.specialStompForce, ForceMode2D.Impulse);
         OnStomp?.Invoke();
     }
 

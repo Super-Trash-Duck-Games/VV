@@ -8,12 +8,13 @@ public class GModel : Model
     public Action<Vector2> SpecialDir;
     private GameObject[] _hitboxes;
     private Coroutine _hit;
+    private GPackage _gp;
 
-    public GModel(Gargantuar entity, Rigidbody2D rb2d, MovementPackage mp, GameObject[] hitboxes) : base(entity, rb2d, mp)
+    public GModel(Gargantuar entity, Rigidbody2D rb2d, GPackage gp, GameObject[] hitboxes) : base(entity, rb2d, gp)
     {
         _gargantuar = entity;
         _rb2d = rb2d;
-        _mp = mp;
+        _gp = gp;
 
         _gargantuar.OnGrounded += OnGrounded;
         _hitboxes = hitboxes;
@@ -51,10 +52,10 @@ public class GModel : Model
         float counter = 0;
         SpecialDir?.Invoke(direction);
 
-        yield return new WaitForSeconds(_mp.dashDelay);
-        _rb2d.AddForce(direction * _mp.punchDash, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(_gp.dashDelay);
+        _rb2d.AddForce(direction * _gp.punchDash, ForceMode2D.Impulse);
 
-        while (counter < _mp.hitDuration)
+        while (counter < _gp.hitDuration)
         {
             counter += Time.deltaTime;
             yield return null;

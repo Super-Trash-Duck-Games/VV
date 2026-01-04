@@ -6,10 +6,10 @@ public class PatrolState : State
     private Transform[] _waypoints;
     private int _currentWPIndex;
     private Rigidbody2D _rb2d;
-    private MovementPackage _mp;
+    private EntityPackage _mp;
     private bool _goingRight = true;
     private bool _mirrorOnPatrol;
-    public PatrolState(AIEnemy aie, Transform[] waypoints, Rigidbody2D rb2d, MovementPackage mp)
+    public PatrolState(AIEnemy aie, Transform[] waypoints, Rigidbody2D rb2d, EntityPackage mp)
     {
         _aie = aie;
         _waypoints = waypoints;

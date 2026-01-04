@@ -17,25 +17,25 @@ public abstract class Entity : MonoBehaviour
 
     [Header("Parameters")]
     [SerializeField] protected GameObject _mpGO;
-    protected MovementPackage _mp;
+    protected EntityPackage _ep;
 
     [Header("Ground Detection")]
     [field: SerializeField] public bool Grounded { get; protected set; }
     public Action<bool> OnGrounded;
     [SerializeField] protected LayerMask _groundLM;
     [SerializeField] protected float _groundDetectionLenght = .2f;
-
+    public bool mirrored;
 
     protected virtual void Start()
     {
-        _mp = _mpGO.GetComponent<MovementPackage>();
+        _ep = _mpGO.GetComponent<EntityPackage>();
         GetComponents();
         MVC();
     }
 
     protected virtual void MVC()
     {
-        _model = new Model(this, _rb2d, _mp);
+        _model = new Model(this, _rb2d, _ep);
         _view = new View(_anim, this, _model);
         _controller = new Controller(_model);
     }
@@ -66,24 +66,6 @@ public abstract class Entity : MonoBehaviour
         _controller.FauxLateUpdate();
         GroundDetection();
     }
-
-    /*  protected virtual void OnCollisionEnter2D(Collision2D collision)
-      {
-          if (collision.gameObject.layer == 6)
-          {
-              Grounded = true;
-              OnGrounded?.Invoke(true);
-          }
-      }
-
-      protected virtual void OnCollisionExit2D(Collision2D collision)
-      {
-          if (collision.gameObject.layer == 6)
-          {
-              OnGrounded?.Invoke(false);
-              Grounded = false;
-          }
-      }*/
 
     protected void GroundDetection()
     {

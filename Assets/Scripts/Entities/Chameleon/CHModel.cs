@@ -3,11 +3,12 @@ using UnityEngine;
 public class CHModel : Model
 {
     private Chameleon _chameleon;
-    public CHModel(Chameleon entity, Rigidbody2D rb2d, MovementPackage mp) : base(entity, rb2d, mp)
+    private CHPackage _chp;
+    public CHModel(Chameleon entity, Rigidbody2D rb2d, CHPackage chp) : base(entity, rb2d, chp)
     {
         _chameleon = entity;
         _rb2d = rb2d;
-        _mp = mp;
+        _chp = chp;
 
         _chameleon.OnGrounded += OnGrounded;
     }
@@ -35,6 +36,6 @@ public class CHModel : Model
     {
         if (_chameleon.currentGrapplePoint == null) return;
        if (y != 0)
-           _chameleon.spring.distance += _mp.adjustDistanceRate * Time.deltaTime * -y;
+           _chameleon.spring.distance += _chp.adjustDistanceRate * Time.deltaTime * -y;
     }
 }

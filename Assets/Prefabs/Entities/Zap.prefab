@@ -51,6 +51,11 @@ MonoBehaviour:
   type: 3
   _mpGO: {fileID: 533554406465359028, guid: 5c875a4a61e7bfc4fbcb74dc2cd8f5c1, type: 3}
   <Grounded>k__BackingField: 0
+  _groundLM:
+    serializedVersion: 2
+    m_Bits: 64
+  _groundDetectionLenght: 0.2
+  mirrored: 0
 --- !u!114 &3793253083398823158
 MonoBehaviour:
   m_ObjectHideFlags: 0

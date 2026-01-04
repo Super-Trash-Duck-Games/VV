@@ -19,6 +19,7 @@ public class KKView : View
         _kkModel.OnCrouch += Crouch;
         _kumKum.OnWalled += OnWalled;
         _kkModel.OnStomp += OnStomp;
+        _kkModel.OnBite += OnBite;
         _stompPS = stompPS;
     }
 
@@ -41,5 +42,10 @@ public class KKView : View
     {
         _anim.SetTrigger("Stomp");
         _stompPS.Play();
+    }
+
+    private void OnBite()
+    {
+        _anim.SetTrigger("Bite");
     }
 }

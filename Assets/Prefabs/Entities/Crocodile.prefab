@@ -52,6 +52,11 @@ MonoBehaviour:
   type: 4
   _mpGO: {fileID: 5947755006843161147, guid: cfeb17802aad968458838cc4c55f3386, type: 3}
   <Grounded>k__BackingField: 0
+  _groundLM:
+    serializedVersion: 2
+    m_Bits: 64
+  _groundDetectionLenght: 0.2
+  mirrored: 0
   _shootPoint: {fileID: 2091581360867962073}
   _bulletPrefab: {fileID: 7607714373923994013, guid: 670676c90da9bbb4b831d60e06d7891f, type: 3}
 --- !u!114 &4635190540564886903

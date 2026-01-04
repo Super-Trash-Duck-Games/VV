@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class MorphManager : MonoBehaviour
 {
+    public static MorphManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     [SerializeField] private Entity _player;
     [SerializeField] private Entity _currentMorph;
     [SerializeField] private Entity[] _entities;
@@ -36,7 +44,7 @@ public class MorphManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I)) MorphBack();
     }
 
-    private void Morph(EntityTypes entity)
+    public void Morph(EntityTypes entity)
     {
         _currentMorph = _entitiesByType[entity];
         _currentMorph.gameObject.SetActive(true);

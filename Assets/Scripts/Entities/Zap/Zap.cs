@@ -9,7 +9,7 @@ public class Zap : Entity
 
     protected override void MVC()
     {
-        _zModel = new ZModel(this, _rb2d, _mpGO.GetComponent<MovementPackage>());
+        _zModel = new ZModel(this, _rb2d, _mpGO.GetComponent<EntityPackage>());
         _view = new ZView(_anim, this, _zModel);
         _zController = new ZController(_zModel);
     }
@@ -22,5 +22,6 @@ public class Zap : Entity
     protected override void LateUpdate()
     {
         _zController.FauxLateUpdate();
+        GroundDetection();
     }
 }

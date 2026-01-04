@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4880129821666588751}
-  - component: {fileID: 2287813466187807106}
+  - component: {fileID: 7995195234224576172}
   m_Layer: 0
   m_Name: KumkumMovementPackage
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2287813466187807106
+--- !u!114 &7995195234224576172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2659553222058812986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0423ada2f6a35d5419f1ae899127781c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2defbb48ff892044dbb737f5ad312d4c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovementPackage
+  m_EditorClassIdentifier: Assembly-CSharp::KKPackage
   speed: 6
   runSpeed: 10
   turnSpeed: 5
@@ -55,11 +55,6 @@ MonoBehaviour:
   jumpCutoff: 10
   wallJumpForce: {x: 6, y: 9}
   specialHangTime: 1.2
-  specialStompForce: 20
-  punchDash: 0
-  dashDelay: 0
-  hitDuration: 0
-  grappleDetectionLenght: 0
-  adjustDistanceRate: 0
-  rbLinearDamplingWhileGrappled: 0
-  tongueExtensionSpeed: 0
+  specialStompForce: 15
+  sizeGrowth: 3
+  attackSpeed: 4

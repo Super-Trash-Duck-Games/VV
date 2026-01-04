@@ -48,9 +48,15 @@ public class View
     protected virtual void Mirror(bool mirrored)
     {
         if (mirrored)
+        {
+            _entity.mirrored = false;
             _entity.transform.localScale = new Vector2(1, 1);
+        }
         else
+        {
+            _entity.mirrored = true;
             _entity.transform.localScale = new Vector2(-1, 1);
+        }
     }
 
     public float MorphBack()

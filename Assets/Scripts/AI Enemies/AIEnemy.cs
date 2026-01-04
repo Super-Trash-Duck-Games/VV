@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AIEnemy : MonoBehaviour
 {
+    public EntityTypes entityType;
     public AIEnemiesStates currentState;
 
     private FiniteStateMachine _fsm;
@@ -17,6 +18,7 @@ public class AIEnemy : MonoBehaviour
     [SerializeField] private float _waitTime;
     [Header("Dizzy")]
     [SerializeField] private float _dizzyTime;
+    public bool isDizzy;
     void Start()
     {
         OnStart();
@@ -29,7 +31,7 @@ public class AIEnemy : MonoBehaviour
         _anim = GetComponentInChildren<Animator>();
         _view = new AIEnemyView(_anim);
 
-        MovementPackage mp = _movementPackage.GetComponent<MovementPackage>();
+        EntityPackage mp = _movementPackage.GetComponent<EntityPackage>();
 
         _fsm = new FiniteStateMachine();
 
@@ -71,5 +73,10 @@ public class AIEnemy : MonoBehaviour
     {
         _fsm.OnTriggerEnter2D(collision);
         //if(collision.gameObject.layer == 7) Debug.Log("Fuckititty");
+    }
+
+    public void Death()
+    {
+        Destroy(this.gameObject);
     }
 }

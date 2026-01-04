@@ -9,7 +9,7 @@ public class Gargantuar : Entity
 
     protected override void MVC()
     {
-        _gModel = new GModel(this, _rb2d, _mpGO.GetComponent<MovementPackage>(), hitboxes);
+        _gModel = new GModel(this, _rb2d, _mpGO.GetComponent<GPackage>(), hitboxes);
         _view = new GView(_anim, this, _gModel);
         _gController = new GController(_gModel, this);
     }
@@ -21,5 +21,6 @@ public class Gargantuar : Entity
     protected override void LateUpdate()
     {
         _gController.FauxLateUpdate();
+        GroundDetection();
     }
 }

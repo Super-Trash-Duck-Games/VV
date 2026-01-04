@@ -68,8 +68,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7995195234224576172, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2659553222058812986, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5810231788193978439}
   m_SourcePrefab: {fileID: 100100000, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+--- !u!1 &983842003997414987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2659553222058812986, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+  m_PrefabInstance: {fileID: 2976860144674041969}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5810231788193978439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983842003997414987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611ed506ef1fa5e419dc70f3bfdf75eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CHPackage
+  speed: 6
+  runSpeed: 10
+  turnSpeed: 5
+  deceleration: 4.88
+  airControl: 6
+  doubleJump: 0
+  weight: 4
+  jumpForce: 7
+  jumpCutoff: 10
+  grappleDetectionLenght: 0
+  adjustDistanceRate: 0
+  rbLinearDamplingWhileGrappled: 0
+  tongueExtensionSpeed: 0

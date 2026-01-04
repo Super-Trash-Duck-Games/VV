@@ -21,7 +21,7 @@ public class Kumkum : Entity
 
     protected override void MVC()
     {
-        _kkModel = new KKModel(this, _rb2d, _mpGO.GetComponent<MovementPackage>(), _kkPM, _stompCollider);
+        _kkModel = new KKModel(this, _rb2d, _mpGO.GetComponent<KKPackage>(), _kkPM, _stompCollider);
         _kkView = new KKView(_anim, this, _kkModel, _stompPS);
         _kkController = new KKController(_kkModel);
     }

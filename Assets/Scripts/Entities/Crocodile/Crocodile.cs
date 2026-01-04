@@ -13,7 +13,7 @@ public class Crocodile : Entity
 
     protected override void MVC()
     {
-        _crModel = new CRModel(this, _rb2d, _mpGO.GetComponent<MovementPackage>());
+        _crModel = new CRModel(this, _rb2d, _mpGO.GetComponent<CRPackage>());
         _view = new CRView(_anim, this, _crModel);
         _crController = new CRController(_crModel);
     }
@@ -26,6 +26,7 @@ public class Crocodile : Entity
     protected override void LateUpdate()
     {
         _crController.FauxLateUpdate();
+        GroundDetection();
     }
 
     public CrocoBullet Shoot()
