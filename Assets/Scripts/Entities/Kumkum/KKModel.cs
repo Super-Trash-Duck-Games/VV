@@ -25,6 +25,7 @@ public class KKModel : Model
     private BiteDetector _biteDetector;
     private AIEnemy _enemy;
     private bool _biting;
+    private bool _dead;
     public KKModel(Kumkum entity, Rigidbody2D rb2d, KKPackage kp, PhysicsMaterial2D kkPM, Collider2D stompCollider) : base(entity, rb2d, kp)
     {
         _kumKum = entity;
@@ -42,6 +43,7 @@ public class KKModel : Model
 
     public override void Move(float x)
     {
+        if(_dead) return;
         if (_biting) return;
         base.Move(x);
     }
@@ -95,6 +97,7 @@ public class KKModel : Model
 
     public override void Jump()
     {
+        if(_dead) return;
         if (_biting) return;
         if (_crouching) return;
         base.Jump();
@@ -103,6 +106,7 @@ public class KKModel : Model
 
     public void Crouch()
     {
+        if (_dead) return;
         if (_biting) return;
 
         if (!_entity.Grounded)
@@ -130,6 +134,8 @@ public class KKModel : Model
 
     public override void Special()
     {
+        if (_dead) return;
+
         if (_kumKum.Grounded)
         {
             if (_bite == null)
@@ -169,6 +175,7 @@ public class KKModel : Model
         _bite = null;
         _biting = false;
 
+
         MorphManager.Instance.Morph(_enemy.entityType);
         _enemy = null;
     }
@@ -184,7 +191,7 @@ public class KKModel : Model
             yield return null;
         }
 
-        if(_enemy != null) _enemy.Death();
+        if (_enemy != null) _enemy.Death();
 
         while (_kumKum.transform.localScale.x < -1.1)
         {
@@ -231,5 +238,10 @@ public class KKModel : Model
     public void SpecialRelease()
     {
         _specialHanging = false;
+    }
+
+    public void Death()
+    {
+        _dead = true;
     }
 }

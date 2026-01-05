@@ -16,7 +16,7 @@ public abstract class Entity : MonoBehaviour
     protected Animator _anim;
 
     [Header("Parameters")]
-    [SerializeField] protected GameObject _mpGO;
+    [SerializeField] protected GameObject _chPackageGO;
     protected EntityPackage _ep;
 
     [Header("Ground Detection")]
@@ -28,7 +28,7 @@ public abstract class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
-        _ep = _mpGO.GetComponent<EntityPackage>();
+        _ep = _chPackageGO.GetComponent<EntityPackage>();
         GetComponents();
         MVC();
     }

@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kumkum
   type: 0
-  _mpGO: {fileID: 2659553222058812986, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
+  _chPackageGO: {fileID: 2659553222058812986, guid: aef44dbbb5b80ce43b98b801ae87752b, type: 3}
   <Grounded>k__BackingField: 0
   _groundLM:
     serializedVersion: 2

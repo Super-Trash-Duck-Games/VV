@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8102012955688622940}
   - component: {fileID: 3716192228629051600}
   - component: {fileID: 8759482458213220020}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Chameleon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chameleon
   type: 2
-  _mpGO: {fileID: 983842003997414987, guid: 34d22f733cd6ef645aad3fbb43e3089c, type: 3}
+  _chPackageGO: {fileID: 983842003997414987, guid: 34d22f733cd6ef645aad3fbb43e3089c, type: 3}
   <Grounded>k__BackingField: 0
   _groundLM:
     serializedVersion: 2
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6209873155026400965}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LRStartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 5162607618168753615}
   - component: {fileID: 88745727198333536}
   - component: {fileID: 2708739588651373509}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,13 +472,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5010274237188438496}
     m_Modifications:
+    - target: {fileID: 27790101989707732, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583551192294991344, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819687780849271180, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442271668767501233, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639600662093811564, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008478006467341828, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5008478006467341828, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5489297714494296906, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6591467315427058905, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
       propertyPath: m_Name
       value: Chameleon_Accesories_Placer Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591467315427058905, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512191872696816445, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7624911382247332535, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -519,6 +555,10 @@ PrefabInstance:
     - target: {fileID: 7624911382247332535, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896494891158100417, guid: 2613137abba4db8459d282e7d5c0ec2a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

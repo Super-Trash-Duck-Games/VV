@@ -30,6 +30,7 @@ public class CHModel : Model
     public void SpecialRelease()
     {
         _chameleon.UnGrapple();
+        _rb2d.AddForce(Vector2.up * _ep.jumpForce, ForceMode2D.Impulse);
     }
 
     public void AdjustGrappleLenght(float y)

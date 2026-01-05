@@ -21,7 +21,7 @@ public class Kumkum : Entity
 
     protected override void MVC()
     {
-        _kkModel = new KKModel(this, _rb2d, _mpGO.GetComponent<KKPackage>(), _kkPM, _stompCollider);
+        _kkModel = new KKModel(this, _rb2d, _chPackageGO.GetComponent<KKPackage>(), _kkPM, _stompCollider);
         _kkView = new KKView(_anim, this, _kkModel, _stompPS);
         _kkController = new KKController(_kkModel);
     }
@@ -62,6 +62,17 @@ public class Kumkum : Entity
         }
     }
 
+    public void Death()
+    {
+        _kkView.Death();
+        _kkModel.Death();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+            Death();
+    }
 
     protected override void OnDrawGizmos()
     {

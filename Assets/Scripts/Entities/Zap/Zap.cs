@@ -9,7 +9,7 @@ public class Zap : Entity
 
     protected override void MVC()
     {
-        _zModel = new ZModel(this, _rb2d, _mpGO.GetComponent<EntityPackage>());
+        _zModel = new ZModel(this, _rb2d, _chPackageGO.GetComponent<EntityPackage>());
         _view = new ZView(_anim, this, _zModel);
         _zController = new ZController(_zModel);
     }

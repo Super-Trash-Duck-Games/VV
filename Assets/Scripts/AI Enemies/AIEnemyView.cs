@@ -17,4 +17,14 @@ public class AIEnemyView
     {
         _anim.SetBool("Dizzy", dizzy);
     }
+
+    public void SkipMorph()
+    {
+        _anim.SetTrigger("SkipMorph");
+    }
+
+    public void Attack()
+    {
+        _anim.SetTrigger("Attack");
+    }
 }

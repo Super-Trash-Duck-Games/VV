@@ -5,6 +5,7 @@ public class KKView : View
     private KKModel _kkModel;
     private Kumkum _kumKum;
     [SerializeField] private ParticleSystem _stompPS;
+    private bool _dead;
 
     public KKView(Animator anim, Kumkum entity, KKModel model, ParticleSystem stompPS) : base(anim, entity, model)
     {
@@ -47,5 +48,12 @@ public class KKView : View
     private void OnBite()
     {
         _anim.SetTrigger("Bite");
+    }
+
+    public void Death()
+    {
+        if (_dead) return;
+        _dead = true;
+        _anim.SetTrigger("Death");
     }
 }

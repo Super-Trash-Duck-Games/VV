@@ -2,5 +2,6 @@ public enum AIEnemiesStates
 {
     Patrol,
     PatrolPoint,
-    Dizzy
+    Dizzy,
+    Attack
 }

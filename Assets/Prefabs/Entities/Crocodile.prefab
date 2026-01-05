@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7100310926316875102}
   - component: {fileID: 4635190540564886903}
   - component: {fileID: 1489465468126550339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crocodile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crocodile
   type: 4
-  _mpGO: {fileID: 5947755006843161147, guid: cfeb17802aad968458838cc4c55f3386, type: 3}
+  _chPackageGO: {fileID: 5947755006843161147, guid: cfeb17802aad968458838cc4c55f3386, type: 3}
   <Grounded>k__BackingField: 0
   _groundLM:
     serializedVersion: 2
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2091581360867962073}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 1099179396921564724}
   - component: {fileID: 7100038619407290884}
   - component: {fileID: 4511458220423987968}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,16 +289,48 @@ PrefabInstance:
     m_TransformParent: {fileID: 2359807099067714853}
     m_Modifications:
     - target: {fileID: 1137120866811621327, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137120866811621327, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649922687276949911, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899534977121404395, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333181253254957994, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866280839562408785, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342632148643106335, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5342632148643106335, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5748365178410839927, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6115042828264621250, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
       propertyPath: m_Name
       value: Crocodile_Accesories_Placer Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115042828264621250, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7382603844402592428, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -341,8 +373,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7486615497074045734, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486615497074045734, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418306752955398618, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8418306752955398618, guid: 32efc9516e6d65341b06bba7e2d57bce, type: 3}
       propertyPath: m_IsActive

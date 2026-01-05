@@ -107,6 +107,6 @@ MonoBehaviour:
   weight: 4
   jumpForce: 7
   jumpCutoff: 10
-  punchDash: 0
-  dashDelay: 0
-  hitDuration: 0
+  punchDash: 10
+  dashDelay: 0.25
+  hitDuration: 0.4

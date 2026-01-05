@@ -24,6 +24,7 @@ public class Chameleon : Entity
     protected override void Start()
     {
         base.Start();
+        _ep = _chPackageGO.GetComponent<CHPackage>();
         spring = GetComponent<SpringJoint2D>();
 
         if (_circleCol == null) _circleCol = GetComponent<CircleCollider2D>();
@@ -35,7 +36,7 @@ public class Chameleon : Entity
 
     protected override void MVC()
     {
-        _chModel = new CHModel(this, _rb2d, _mpGO.GetComponent<CHPackage>());
+        _chModel = new CHModel(this, _rb2d, _chPackageGO.GetComponent<CHPackage>());
         _view = new CHView(_anim, this, _chModel);
         _chController = new CHController(_chModel);
     }

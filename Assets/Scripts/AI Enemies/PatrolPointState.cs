@@ -9,10 +9,16 @@ public class PatrolPointState : State
     {
         _aie = aie;
          _waitTime = waitTime;
+        _aie.OnPlayerSeen = OnPlayerSeen;
     }
 
     public override void OnDrawGizmos()
     {
+    }
+
+    private void OnPlayerSeen()
+    {
+        fsm.ChangeState(AIEnemiesStates.Attack);
     }
 
     public override void OnEnter()

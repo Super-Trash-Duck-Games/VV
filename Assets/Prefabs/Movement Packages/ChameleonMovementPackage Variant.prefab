@@ -103,7 +103,7 @@ MonoBehaviour:
   weight: 4
   jumpForce: 7
   jumpCutoff: 10
-  grappleDetectionLenght: 0
-  adjustDistanceRate: 0
-  rbLinearDamplingWhileGrappled: 0
-  tongueExtensionSpeed: 0
+  grappleDetectionLenght: 5
+  adjustDistanceRate: 3
+  rbLinearDamplingWhileGrappled: 1
+  tongueExtensionSpeed: 5
