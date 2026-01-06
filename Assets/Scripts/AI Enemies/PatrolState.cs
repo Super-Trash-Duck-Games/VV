@@ -17,7 +17,6 @@ public class PatrolState : State
         _rb2d = rb2d;
         _currentWPIndex = 0;
 
-        _aie.OnPlayerSeen = OnPlayerSeen;
     }
 
     public override void OnDrawGizmos()
@@ -26,19 +25,23 @@ public class PatrolState : State
 
     private void OnPlayerSeen()
     {
+        _aie.OnPlayerSeen -= OnPlayerSeen;
+        Debug.Log("player seen during Patrol");
         fsm.ChangeState(AIEnemiesStates.Attack);
     }
 
     public override void OnEnter()
     {
+        _aie.OnPlayerSeen += OnPlayerSeen;
         _aie.currentState = AIEnemiesStates.Patrol;
-        _aie._view.Move(true);
+        _aie.view.Move(true);
         _aie.Mirror(_mirrorOnPatrol);
-        _aie._view.SkipMorph();
+        _aie.view.SkipMorph();
     }
 
     public override void OnExit()
     {
+        //_aie.OnPlayerSeen -= OnPlayerSeen;
     }
 
     public override void OnFixedUpdate()

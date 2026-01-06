@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AIEnemyView 
 {
-    private Animator _anim;
+    protected Animator _anim;
     public AIEnemyView(Animator anim)
     {
         _anim = anim;

@@ -1,28 +1,30 @@
 using System;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class AIEnemy : MonoBehaviour
 {
     public EntityTypes entityType;
     public AIEnemiesStates currentState;
 
-    private FiniteStateMachine _fsm;
-    private Rigidbody2D _rb2d;
-    private Animator _anim;
-    public AIEnemyView _view { get; private set; }
+    protected FiniteStateMachine _fsm;
+    protected Rigidbody2D _rb2d;
+    protected Animator _anim;
+    public AIEnemyView view { get; protected set; }
 
     [Header("Patrol")]
-    [SerializeField] private Transform[] _waypoints;
-    [SerializeField] private GameObject _movementPackage;
+    [SerializeField] protected Transform[] _waypoints;
+    [SerializeField] protected GameObject _movementPackage;
 
     [Header("PatrolPoint")]
-    [SerializeField] private float _waitTime;
+    [SerializeField] protected float _waitTime;
     [Header("Dizzy")]
-    [SerializeField] private float _dizzyTime;
+    [SerializeField] protected float _dizzyTime;
     public bool isDizzy;
 
     [Header("Lookout parameters")]
     [SerializeField] private float _watchDistance;
+    private float _oWatchDistance;
     [SerializeField] private float _watchAmplitude;
     [SerializeField] private Vector2 _offset;
     [SerializeField] private Vector3[] _watchPoints;
@@ -30,31 +32,43 @@ public class AIEnemy : MonoBehaviour
     [SerializeField] private LayerMask _kkLM;
     private bool _castsSetup;
     public Action OnPlayerSeen;
+    public bool PlayerInView { get; protected set; }
     void Start()
     {
+        _oWatchDistance = _watchDistance;
         OnStart();
     }
 
     protected virtual void OnStart()
     {
+        SetupComponents();
+
+        //EntityPackage mp = _movementPackage.GetComponent<EntityPackage>();
+
+        SetupFSM();
+        //_watchDistance = -_oWatchDistance;
+
+        SetupWachout();
+    }
+
+    protected virtual void SetupComponents()
+    {
         _rb2d = gameObject.AddComponent<Rigidbody2D>();
         _rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         _anim = GetComponentInChildren<Animator>();
-        _view = new AIEnemyView(_anim);
+        view = new AIEnemyView(_anim);
+    }
 
-        EntityPackage mp = _movementPackage.GetComponent<EntityPackage>();
-
+    protected virtual void SetupFSM()
+    {
         _fsm = new FiniteStateMachine();
 
-        _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, _waypoints, _rb2d, mp));
+        _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, _waypoints, _rb2d, _movementPackage.GetComponent<EntityPackage>()));
         _fsm.AddState(AIEnemiesStates.PatrolPoint, new PatrolPointState(this, _waitTime));
-        _fsm.AddState(AIEnemiesStates.Dizzy, new DizzyState(this, _dizzyTime, _view));
-        _fsm.AddState(AIEnemiesStates.Attack, new CRAttackState(this));
+        _fsm.AddState(AIEnemiesStates.Dizzy, new DizzyState(this, _dizzyTime, view));
+        _fsm.AddState(AIEnemiesStates.Attack, new AttackState(this));
 
         _fsm.ChangeState(AIEnemiesStates.Patrol);
-        _watchDistance *= -1;
-
-        SetupWachout();
     }
 
     private void Update()
@@ -81,12 +95,14 @@ public class AIEnemy : MonoBehaviour
     {
         if (!mirrored)
         {
-            _watchDistance *= -1;
+            _watchDistance = _oWatchDistance;
+
             transform.localScale = new Vector2(1, 1);
         }
         else
         {
-            _watchDistance *= -1;
+            _watchDistance = -_oWatchDistance;
+
             transform.localScale = new Vector2(-1, 1);
         }
     }
@@ -131,8 +147,15 @@ public class AIEnemy : MonoBehaviour
         foreach (var point in _casts)
         {
             if (point.collider != null)
+            {
                 if (point.collider.gameObject.layer == 3)
+                {
                     OnPlayerSeen?.Invoke();
+                    PlayerInView = true;
+                }
+            }
+            else
+                    PlayerInView = false;
         }
     }
 

@@ -52,7 +52,7 @@ MonoBehaviour:
   _rotateSpeed: 250
   _collisionLM:
     serializedVersion: 2
-    m_Bits: 832
+    m_Bits: 840
   _lifetime: 7
   _ps: {fileID: 8534672183533567200}
 --- !u!212 &4565599969029413637

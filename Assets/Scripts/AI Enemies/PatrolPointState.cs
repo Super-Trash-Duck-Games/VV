@@ -9,7 +9,6 @@ public class PatrolPointState : State
     {
         _aie = aie;
          _waitTime = waitTime;
-        _aie.OnPlayerSeen = OnPlayerSeen;
     }
 
     public override void OnDrawGizmos()
@@ -19,18 +18,23 @@ public class PatrolPointState : State
     private void OnPlayerSeen()
     {
         fsm.ChangeState(AIEnemiesStates.Attack);
+        _aie.OnPlayerSeen -= OnPlayerSeen;
+        Debug.Log("player seen during PatrolPoint");
     }
 
     public override void OnEnter()
     {
+        _aie.OnPlayerSeen += OnPlayerSeen;
         _aie.currentState = AIEnemiesStates.PatrolPoint;
         _counter = _waitTime;
-        _aie._view.Move(false);
+        _aie.view.Move(false);
 
     }
 
     public override void OnExit()
     {
+        //_aie.OnPlayerSeen -= OnPlayerSeen;
+
     }
 
     public override void OnFixedUpdate()

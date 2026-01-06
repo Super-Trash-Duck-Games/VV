@@ -15,6 +15,7 @@ public class AttackState : State
     public override void OnEnter()
     {
         _aie.currentState = AIEnemiesStates.Attack;
+
     }
 
     public override void OnExit()

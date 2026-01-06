@@ -14,6 +14,13 @@ public class CrocoBullet : MonoBehaviour
     [SerializeField] private ParticleSystem _ps;
     private int dir = 1;
 
+    private Coroutine _control;
+
+    private void Awake()
+    {
+        _control = StartCoroutine(Control());
+    }
+
     private void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
@@ -24,16 +31,24 @@ public class CrocoBullet : MonoBehaviour
         }
 
         StartCoroutine(Move());
+
+    }
+
+    public void TargetPlayer()
+    {
+        Transform target;
+        if (_control != null)
+            StopCoroutine(_control);
+        target = FindFirstObjectByType<Kumkum>().transform;
+
+        if (transform.localScale.x < 0)
+            transform.right = transform.position - target.position;
+        else
+            transform.right = target.position - transform.position;
     }
 
     private void Update()
     {
-        float vert = Input.GetAxisRaw("Vertical");
-        if (vert != 0)
-        {
-            transform.Rotate(new Vector3(0, 0, vert * Time.deltaTime * _rotateSpeed * dir));
-        }
-
         _lifetime -= Time.deltaTime;
         if (_lifetime < 0)
         {
@@ -41,11 +56,23 @@ public class CrocoBullet : MonoBehaviour
         }
     }
 
+    private IEnumerator Control()
+    {
+        float vert = Input.GetAxisRaw("Vertical");
+        while (gameObject.activeSelf)
+        {
+            if (vert != 0)
+                transform.Rotate(new Vector3(0, 0, vert * Time.deltaTime * _rotateSpeed * dir));
+
+            yield return null;
+        }
+    }
+
     private IEnumerator Move()
     {
         while (gameObject.activeSelf)
         {
-        _rb2d.AddForce(transform.right * Time.deltaTime * _speed * dir, ForceMode2D.Impulse);
+            _rb2d.AddForce(transform.right * Time.deltaTime * _speed * dir, ForceMode2D.Impulse);
             yield return null;
         }
     }
