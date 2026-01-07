@@ -29,10 +29,12 @@ public class AIEnemy : MonoBehaviour
     [SerializeField] private Vector2 _offset;
     [SerializeField] private Vector3[] _watchPoints;
     [SerializeField] private RaycastHit2D[] _casts;
-    [SerializeField] private LayerMask _kkLM;
+    [SerializeField] protected LayerMask _kkLM;
     private bool _castsSetup;
     public Action OnPlayerSeen;
     public bool PlayerInView { get; protected set; }
+    [SerializeField] protected float _cooldown = .7f;
+
     void Start()
     {
         _oWatchDistance = _watchDistance;
@@ -42,12 +44,7 @@ public class AIEnemy : MonoBehaviour
     protected virtual void OnStart()
     {
         SetupComponents();
-
-        //EntityPackage mp = _movementPackage.GetComponent<EntityPackage>();
-
         SetupFSM();
-        //_watchDistance = -_oWatchDistance;
-
         SetupWachout();
     }
 
@@ -66,7 +63,7 @@ public class AIEnemy : MonoBehaviour
         _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, _waypoints, _rb2d, _movementPackage.GetComponent<EntityPackage>()));
         _fsm.AddState(AIEnemiesStates.PatrolPoint, new PatrolPointState(this, _waitTime));
         _fsm.AddState(AIEnemiesStates.Dizzy, new DizzyState(this, _dizzyTime, view));
-        _fsm.AddState(AIEnemiesStates.Attack, new AttackState(this));
+        _fsm.AddState(AIEnemiesStates.Attack, new AttackState(this, _cooldown));
 
         _fsm.ChangeState(AIEnemiesStates.Patrol);
     }
@@ -134,7 +131,9 @@ public class AIEnemy : MonoBehaviour
     private void CastWathZone()
     {
         if (!_castsSetup) return;
-        _watchPoints[0] = transform.position + (Vector3)_offset;
+        var mirror = 1;
+        if (transform.localScale.x < 0) mirror = -1;
+        _watchPoints[0] = transform.position + new Vector3(_offset.x * mirror, _offset.y);
         _watchPoints[1] = _watchPoints[0] + transform.right * _watchDistance;
         _watchPoints[2] = _watchPoints[0] + transform.up * _watchAmplitude;
         _watchPoints[3] = _watchPoints[0] + transform.right * _watchDistance + transform.up * _watchAmplitude;
@@ -155,7 +154,7 @@ public class AIEnemy : MonoBehaviour
                 }
             }
             else
-                    PlayerInView = false;
+                PlayerInView = false;
         }
     }
 
@@ -167,5 +166,10 @@ public class AIEnemy : MonoBehaviour
         Gizmos.DrawLine(_watchPoints[3], _watchPoints[1]);
         Gizmos.DrawLine(_watchPoints[3], _watchPoints[0]);
         Gizmos.DrawLine(_watchPoints[2], _watchPoints[1]);
+    }
+
+    public virtual void Attack()
+    {
+
     }
 }

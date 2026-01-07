@@ -3,21 +3,9 @@ using System.Collections;
 
 public class AIGargEnemy : AIEnemy
 {
-    [SerializeField] private float _cooldown;
     [SerializeField] private GPackage _gp;
     private AIGarEnemyView _garView;
     [SerializeField] private Collider2D[] _hitColliders;
-    protected override void SetupFSM()
-    {
-        _fsm = new FiniteStateMachine();
-
-        _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, _waypoints, _rb2d, _movementPackage.GetComponent<EntityPackage>()));
-        _fsm.AddState(AIEnemiesStates.PatrolPoint, new PatrolPointState(this, _waitTime));
-        _fsm.AddState(AIEnemiesStates.Dizzy, new DizzyState(this, _dizzyTime, view));
-        _fsm.AddState(AIEnemiesStates.Attack, new GarAttackState(this, _cooldown));
-
-        _fsm.ChangeState(AIEnemiesStates.Patrol);
-    }
 
     protected override void SetupComponents()
     {
@@ -28,17 +16,18 @@ public class AIGargEnemy : AIEnemy
         _rb2d.angularDamping = .5f;
     }
 
+    public override void Attack()
+    {
+        Punch();
+    }
+
     public void Punch()
     {
         Transform kkpos = FindFirstObjectByType<Kumkum>().transform;
 
-        if (kkpos.position.y > transform.position.y)
+        if (kkpos.position.x < transform.position.x)
         {
-            StartCoroutine(Dash(new Vector2(0, 1), _hitColliders[1]));
-        }
-        else if (kkpos.position.x < transform.position.x)
-        {
-            StartCoroutine(Dash(new Vector2(-1, 0),  _hitColliders[0]));
+            StartCoroutine(Dash(new Vector2(-1, 0), _hitColliders[0]));
 
         }
         else if (kkpos.position.x > transform.position.x)

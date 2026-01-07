@@ -25,7 +25,8 @@ public class PatrolState : State
 
     private void OnPlayerSeen()
     {
-        _aie.OnPlayerSeen -= OnPlayerSeen;
+        //_aie.OnPlayerSeen -= OnPlayerSeen;
+        _aie.OnPlayerSeen = null;
         Debug.Log("player seen during Patrol");
         fsm.ChangeState(AIEnemiesStates.Attack);
     }

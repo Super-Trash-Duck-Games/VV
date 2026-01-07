@@ -24,7 +24,8 @@ public class PatrolPointState : State
 
     public override void OnEnter()
     {
-        _aie.OnPlayerSeen += OnPlayerSeen;
+        //_aie.OnPlayerSeen += OnPlayerSeen;
+        _aie.OnPlayerSeen = null;
         _aie.currentState = AIEnemiesStates.PatrolPoint;
         _counter = _waitTime;
         _aie.view.Move(false);
