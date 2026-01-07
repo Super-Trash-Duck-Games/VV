@@ -1448,7 +1448,7 @@ MonoBehaviour:
   _kkLM:
     serializedVersion: 2
     m_Bits: 8
-  _cooldown: 3
+  _cooldown: 1.5
   _gp: {fileID: 7397501936700430523, guid: c91a32264ca5648479054ad68de99711, type: 3}
   _hitColliders:
   - {fileID: 1289202475}

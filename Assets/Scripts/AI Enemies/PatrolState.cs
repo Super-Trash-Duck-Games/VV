@@ -42,6 +42,8 @@ public class PatrolState : State
     public override void OnExit()
     {
         //_aie.OnPlayerSeen -= OnPlayerSeen;
+        _aie.view.Move(false);
+
     }
 
     public override void OnFixedUpdate()

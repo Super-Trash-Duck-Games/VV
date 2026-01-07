@@ -66,9 +66,21 @@ public class Kumkum : Entity
     {
         _kkView.Death();
         _kkModel.Death();
+        _rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.layer = 0;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.layer = 0;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+            Death();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7)
             Death();

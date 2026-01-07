@@ -23,6 +23,9 @@ public class AIGargEnemy : AIEnemy
     {
         base.SetupComponents();
         _garView = new AIGarEnemyView(_anim, this);
+        _rb2d.mass = .5f;
+        _rb2d.linearDamping = .5f;
+        _rb2d.angularDamping = .5f;
     }
 
     public void Punch()
