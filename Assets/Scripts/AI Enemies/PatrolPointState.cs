@@ -35,6 +35,8 @@ public class PatrolPointState : State
     public override void OnExit()
     {
         //_aie.OnPlayerSeen -= OnPlayerSeen;
+        _aie.OnPlayerSeen = null;
+
 
     }
 

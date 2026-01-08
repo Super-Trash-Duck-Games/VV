@@ -6,5 +6,7 @@ public class ZController : Controller
     public ZController(ZModel model) : base(model)
     {
         _zModel = model;
+        _model = _zModel;
     }
+
 }

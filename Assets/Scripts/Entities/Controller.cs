@@ -20,6 +20,7 @@ public  class Controller
         Jump();
         JumpRelease();
         Special();
+        SpecialRelease();
     }
 
     protected virtual void Move()
@@ -45,5 +46,11 @@ public  class Controller
     {
         if (Input.GetButtonDown("Special"))
             _model.Special();
+    }
+
+    protected virtual void SpecialRelease()
+    {
+        if (Input.GetButtonUp("Special"))
+            _model.SpecialRelease();
     }
 }

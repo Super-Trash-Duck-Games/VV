@@ -14,5 +14,12 @@ public class ZView : View
         _zModel.OnJump += Jump;
         _zModel.OnFall += Fall;
         _zap.OnGrounded += Grounded;
+
+        _zModel.OnElectrify += OnElectrify;
+    }
+
+    private void OnElectrify(bool electrified)
+    {
+        _anim.SetBool("Electrified", electrified);
     }
 }

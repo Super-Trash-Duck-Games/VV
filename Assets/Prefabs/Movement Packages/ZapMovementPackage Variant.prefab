@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544e6d7c49466d24cbfd6bb707a645ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZPackage
-  speed: 4
+  speed: 5
   runSpeed: 10
   turnSpeed: 5
   deceleration: 4.88

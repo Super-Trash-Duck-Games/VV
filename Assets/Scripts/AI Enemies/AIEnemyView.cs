@@ -27,4 +27,10 @@ public class AIEnemyView
     {
         _anim.SetTrigger("Attack");
     }
+
+    public void SetBool(string name, bool value)
+    {
+        _anim.SetBool(name, value);
+
+    }
 }

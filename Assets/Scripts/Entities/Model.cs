@@ -89,4 +89,9 @@ public class Model
     {
 
     }
+
+    public virtual void SpecialRelease()
+    {
+
+    }
 }
