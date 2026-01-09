@@ -52,7 +52,7 @@ public class AIChamEnemy : AIEnemy
                 tongue = Vector2.Lerp(kum, _tonguePos.position, timer);
 
             if (Physics2D.Linecast(_tonguePos.position, tongue, _kkLM))
-                DeathTongue();
+                DeathTongue(tongue);
 
             yield return null;
         }
@@ -62,11 +62,13 @@ public class AIChamEnemy : AIEnemy
 
     }
 
-    private void DeathTongue()
+    private void DeathTongue(Vector2 spawnPos)
     {
-        var deathRay = Instantiate(new GameObject(), _tonguePos);
+        var deathRay = Instantiate(new GameObject());
+        deathRay.transform.position = spawnPos;
         var col = deathRay.AddComponent<CircleCollider2D>();
         col.isTrigger = true;
         col.gameObject.layer = 7;
+        Destroy(deathRay, _cooldown);
     }
 }

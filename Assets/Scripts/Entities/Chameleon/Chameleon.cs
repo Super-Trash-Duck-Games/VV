@@ -10,14 +10,13 @@ public class Chameleon : Entity
     private CHController _chController;
 
     //protected new CHPackage _ep;
-    protected CHPackage _chPackage;
+    public CHPackage CHPackage { get; protected set; }
     [Header("Grapple")]
     public List<Rigidbody2D> grapplePoints = new List<Rigidbody2D>();
     public Rigidbody2D closestGrapplePoint;
     public Rigidbody2D currentGrapplePoint;
     public SpringJoint2D spring;
     private Coroutine _closestGrappleDetection;
-    [SerializeField] private CircleCollider2D _circleCol;
     [SerializeField] private LineRenderer _lr;
     private Coroutine _renderLine;
     [SerializeField] private GameObject _lrStartPoint;
@@ -25,11 +24,9 @@ public class Chameleon : Entity
     protected override void Start()
     {
         base.Start();
-        _chPackage = _chPackageGO.GetComponent<CHPackage>();
+        CHPackage = _chPackageGO.GetComponent<CHPackage>();
         spring = GetComponent<SpringJoint2D>();
 
-        if (_circleCol == null) _circleCol = GetComponent<CircleCollider2D>();
-        _circleCol.radius = _chPackage.grappleDetectionLenght;
         spring.enabled = false;
         if (_lr == null) _lr = GetComponent<LineRenderer>();
         _lr.enabled = false;
@@ -53,25 +50,18 @@ public class Chameleon : Entity
         GroundDetection();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "GrapplePoint")
-        {
-            grapplePoints.Add(collision.gameObject.GetComponent<Rigidbody2D>());
-            if (_closestGrappleDetection == null) _closestGrappleDetection = StartCoroutine(SelectClosestGrapplePoint());
-            //closestGrapplePoint = collision.gameObject.GetComponent<Rigidbody2D>();
-        }
 
+    public void OnEnterGrapple(Collider2D collision)
+    {
+        grapplePoints.Add(collision.gameObject.GetComponent<Rigidbody2D>());
+        if (_closestGrappleDetection == null) _closestGrappleDetection = StartCoroutine(SelectClosestGrapplePoint());
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnLeaveGrapple(Collider2D collision)
     {
-        if (collision.gameObject.tag == "GrapplePoint")
-        {
-            grapplePoints.Remove(collision.gameObject.GetComponent<Rigidbody2D>());
-            if (grapplePoints.Count == 0)
-                closestGrapplePoint = null;
-        }
+        grapplePoints.Remove(collision.gameObject.GetComponent<Rigidbody2D>());
+        if (grapplePoints.Count == 0)
+            closestGrapplePoint = null;
     }
 
     private IEnumerator SelectClosestGrapplePoint()
@@ -97,7 +87,7 @@ public class Chameleon : Entity
         spring.enabled = true;
         spring.connectedBody = closestGrapplePoint;
         currentGrapplePoint = closestGrapplePoint;
-        _rb2d.linearDamping = _chPackage.rbLinearDamplingWhileGrappled; 
+        _rb2d.linearDamping = CHPackage.rbLinearDamplingWhileGrappled; 
 
         _renderLine = StartCoroutine(LineRender());
     }
@@ -113,7 +103,7 @@ public class Chameleon : Entity
             _lr.SetPosition(0, _lrStartPoint.transform.position);
             current = Vector2.Lerp(_lrStartPoint.transform.position, currentGrapplePoint.transform.position, lenght);
             _lr.SetPosition(1, current);
-            lenght += Time.deltaTime * _chPackage.tongueExtensionSpeed;
+            lenght += Time.deltaTime * CHPackage.tongueExtensionSpeed;
             yield return null;
         }
 

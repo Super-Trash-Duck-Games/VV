@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3f823340aeaa842adaa63548e48afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AIChamEnemy
-  entityType: 0
+  entityType: 2
   currentState: 0
   _waypoints:
   - {fileID: 0}

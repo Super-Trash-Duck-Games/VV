@@ -67,6 +67,7 @@ public class Kumkum : Entity
         _kkView.Death();
         _kkModel.Death();
         _rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
+        _rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         gameObject.layer = 0;
         for (int i = 0; i < transform.childCount; i++)
         {

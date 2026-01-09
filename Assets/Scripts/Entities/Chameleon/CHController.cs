@@ -12,7 +12,6 @@ public class CHController : Controller
     {
         base.Special();
         _chModel.AdjustGrappleLenght(Input.GetAxisRaw("Vertical"));
-        if (Input.GetButtonUp("Special")) _chModel.SpecialRelease();
 
     }
 }

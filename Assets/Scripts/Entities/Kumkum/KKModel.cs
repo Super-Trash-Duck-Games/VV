@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Linq.Expressions;
 using UnityEngine;
 
 public class KKModel : Model
@@ -23,7 +22,7 @@ public class KKModel : Model
     private KKPackage _package;
     private Coroutine _bite;
     private BiteDetector _biteDetector;
-    private AIEnemy _enemy;
+    [SerializeField] private AIEnemy _enemy;
     private bool _biting;
     private bool _dead;
     public KKModel(Kumkum entity, Rigidbody2D rb2d, KKPackage kp, PhysicsMaterial2D kkPM, Collider2D stompCollider) : base(entity, rb2d, kp)
@@ -43,7 +42,7 @@ public class KKModel : Model
 
     public override void Move(float x)
     {
-        if(_dead) return;
+        if (_dead) return;
         if (_biting) return;
         base.Move(x);
     }
@@ -97,7 +96,7 @@ public class KKModel : Model
 
     public override void Jump()
     {
-        if(_dead) return;
+        if (_dead) return;
         if (_biting) return;
         if (_crouching) return;
         base.Jump();
@@ -152,16 +151,20 @@ public class KKModel : Model
 
     private IEnumerator BiteRight()
     {
-        _biting = true;
-        _biteDetector.TurnOn();
-        OnBite?.Invoke();
+        BeforeBite();
+
         while (_kumKum.transform.localScale.x < _package.sizeGrowth - .5f)
         {
             _kumKum.transform.localScale = Vector3.Lerp(_kumKum.transform.localScale, Vector3.one * _package.sizeGrowth, _package.attackSpeed * Time.deltaTime);
             yield return null;
         }
 
-        if (_enemy != null) _enemy.Death();
+        var enemyCaught = false;
+        if (_enemy != null)
+        {
+            enemyCaught = true;
+            _enemy.Death();
+        }
 
         while (_kumKum.transform.localScale.x > 1.1)
         {
@@ -169,29 +172,26 @@ public class KKModel : Model
             yield return null;
         }
 
-        _kumKum.transform.localScale = Vector3.one;
-        _biteDetector.TurnOff();
-
-        _bite = null;
-        _biting = false;
-
-
-        MorphManager.Instance.Morph(_enemy.entityType);
-        _enemy = null;
+        if (enemyCaught)
+            MorphManager.Instance.Morph(_enemy.entityType);
+        AfterBite();
     }
 
     private IEnumerator BiteLeft()
     {
-        _biting = true;
-        _biteDetector.TurnOn();
-        OnBite?.Invoke();
+        BeforeBite();
+
         while (_kumKum.transform.localScale.x > -_package.sizeGrowth + .5f)
         {
             _kumKum.transform.localScale = Vector3.Lerp(_kumKum.transform.localScale, new Vector3(-_package.sizeGrowth, _package.sizeGrowth), _package.attackSpeed * Time.deltaTime);
             yield return null;
         }
-
-        if (_enemy != null) _enemy.Death();
+        var enemyCaught = false;
+        if (_enemy != null)
+        {
+            enemyCaught = true;
+            _enemy.Death();
+        }
 
         while (_kumKum.transform.localScale.x < -1.1)
         {
@@ -199,13 +199,30 @@ public class KKModel : Model
             yield return null;
         }
 
+        if (enemyCaught)
+            MorphManager.Instance.Morph(_enemy.entityType);
+        AfterBite();
+    }
+
+    private void BeforeBite()
+    {
+        _biting = true;
+        _biteDetector.TurnOn();
+        OnBite?.Invoke();
+    }
+
+    private void AfterBite()
+    {
         _kumKum.transform.localScale = new Vector3(-1, 1);
         _biteDetector.TurnOff();
 
         _bite = null;
         _biting = false;
 
-        MorphManager.Instance.Morph(_enemy.entityType);
+        if (_enemy != null)
+        {
+            Debug.Log("Fuckititty");
+        }
         _enemy = null;
     }
 
