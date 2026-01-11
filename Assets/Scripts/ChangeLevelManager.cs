@@ -16,4 +16,14 @@ public class ChangeLevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(nextScene);
     }
+
+    public void GoToNextScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

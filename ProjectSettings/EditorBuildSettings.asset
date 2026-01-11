@@ -5,9 +5,39 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1f7e992cb0593bf4d809ecffee3472a2
+  - enabled: 1
+    path: Assets/Scenes/Wardrobe.unity
+    guid: 8e561ad6467119446a7794c93f5fdf7c
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Levels/ChameleonTutorial.unity
+    guid: fdfcd5b62e4f4574eb9bdade4b0b8bfb
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Levels/CrocodileTutorial.unity
+    guid: 9a6b64572dcaf4e4185f21bd008b9d31
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Levels/GargantuarTutorial.unity
+    guid: 2e59a9ad9149fca4e939c4ac3fe8e638
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Levels/ZapTutorial.unity
+    guid: b862370cbe189ed45aa9b51d343ca429
+  - enabled: 1
+    path: Assets/Scenes/Levels/MidBoss_Hand_Level.unity
+    guid: 0112911a437962642aa0d9c43adc0c55
+  - enabled: 1
+    path: Assets/Scenes/Levels/VerticalLevel.unity
+    guid: 21ac451dfc7bad742b71d263287f3ad9
+  - enabled: 1
+    path: Assets/Scenes/Cinematics/EndCinematic.unity
+    guid: 359c03049293a244b85a664c6b5cff25
+  - enabled: 1
+    path: Assets/Scenes/Cinematics/StartingCinematic.unity
+    guid: 4167621a6d5a69349a8b74baffe7e3bd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

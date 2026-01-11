@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 4718011687277215875}
   - component: {fileID: 5435674857813009494}
   - component: {fileID: 6554783165078294410}
-  - component: {fileID: 7369925878811177408}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,43 +113,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &7369925878811177408
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339366291595322829}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: cfaed3e21995f6449a4aa203260b4ae3, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.012322336, y: 0.46875}
-  m_Size: {x: 0.67464465, y: 0.9375}
-  m_Direction: 0
 --- !u!1 &4321411323950298904
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +202,7 @@ GameObject:
   - component: {fileID: 2835219001851223567}
   - component: {fileID: 6343026860030764209}
   - component: {fileID: 7645521125883548766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BiteZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,6 +294,7 @@ GameObject:
   - component: {fileID: 4228227196359968892}
   - component: {fileID: 2703508515432812661}
   - component: {fileID: 6135567089278221570}
+  - component: {fileID: 4116595191274498421}
   m_Layer: 3
   m_Name: Kumkum
   m_TagString: Untagged
@@ -424,6 +387,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &4116595191274498421
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639835571948411966}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: cfaed3e21995f6449a4aa203260b4ae3, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.012322336, y: 0.46875}
+  m_Size: {x: 0.67464465, y: 0.9375}
+  m_Direction: 0
 --- !u!1 &7661635062951311219
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 1424661809335005943}
   - component: {fileID: 8690965585569168168}
   - component: {fileID: 8850064419437250260}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StompParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5332,6 +5332,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 540848705332207648, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 540848705332207648, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -5340,8 +5344,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 808475324547204188, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 808475324547204188, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207632011637812856, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2207632011637812856, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_IsActive
@@ -5415,6 +5427,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KK_Accesories_Placer
       objectReference: {fileID: 0}
+    - target: {fileID: 5023826908690580853, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5102540953117879556, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5424,8 +5440,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5975230372028773094, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975230372028773094, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575289921294700456, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6575289921294700456, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_IsActive
@@ -5440,8 +5464,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7329359468660258925, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329359468660258925, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539112800545813137, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8539112800545813137, guid: 911ed6be07ab1b04cb2eb4be3a76cbeb, type: 3}
       propertyPath: m_IsActive

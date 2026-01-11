@@ -4,6 +4,7 @@ using UnityEngine;
 public class Saw : MonoBehaviour
 {
     [SerializeField] private Animator _anim;
+    [SerializeField] private bool _static;
     [SerializeField] private Transform[] _waypoints;
     [SerializeField] private float _tolerance;
     [SerializeField] private float _speed;
@@ -11,7 +12,10 @@ public class Saw : MonoBehaviour
     void Start()
     {
         _anim = GetComponent<Animator>();
-        TurnOn();
+        _anim.SetTrigger("On");
+
+        if (!_static)
+            TurnOn();
         transform.position = _waypoints[0].position;
     }
 
