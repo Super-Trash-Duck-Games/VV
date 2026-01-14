@@ -87,6 +87,12 @@ public class Kumkum : Entity
             Death();
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.layer == 7)
+            Death();
+    }
+
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
