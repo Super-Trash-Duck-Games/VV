@@ -1,53 +1,22 @@
 using System.Collections;
 using UnityEngine;
 
-public class Saw : MonoBehaviour
+public class Saw : MonoBehaviour, IHazard
 {
-    [SerializeField] private Animator _anim;
-    [SerializeField] private bool _static;
-    [SerializeField] private Transform[] _waypoints;
-    [SerializeField] private float _tolerance;
-    [SerializeField] private float _speed;
+    [SerializeField] protected Animator _anim;
 
-    void Start()
+    protected virtual void Start()
     {
         _anim = GetComponent<Animator>();
         _anim.SetTrigger("On");
-
-        if (!_static)
-            TurnOn();
-        transform.position = _waypoints[0].position;
     }
 
-    private IEnumerator Activate()
+    public virtual void Activate()
     {
-        int index = 0;
-        while (true)
-        {
-            if (Vector2.Distance(transform.position, _waypoints[index].position) > _tolerance)
-            {
-                //transform.position = Vector2.Lerp(transform.position, _waypoints[index].position, _speed * Time.deltaTime);
-                transform.position = Vector2.MoveTowards(transform.position, _waypoints[index].position, _speed * Time.deltaTime);
-                yield return null;
-            }
-            else
-            {
-                if (index == 0) index = 1;
-                else index = 0;
-            }
-            yield return null;
-        }
+        
     }
 
-    public void TurnOn()
+    public virtual void DeActivate()
     {
-        _anim.SetTrigger("On");
-        StartCoroutine(Activate());
-    }
-
-    public void TurnOff()
-    {
-        _anim.SetTrigger("Off");
-        StopAllCoroutines();
     }
 }

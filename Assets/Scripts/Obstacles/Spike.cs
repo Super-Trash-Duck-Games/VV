@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class Spike : MonoBehaviour, IHazard
 {
     [SerializeField] private float _delay;
     [SerializeField] private float _openTime;
@@ -19,11 +19,11 @@ public class Spike : MonoBehaviour
     {
         if (collision.gameObject.layer == 3)
         {
-            StartCoroutine(Activate());
+            StartCoroutine(OnActivate());
         }
     }
 
-    private IEnumerator Activate()
+    private IEnumerator OnActivate()
     {
         float timer = 0;
         while (timer < _delay)
@@ -42,5 +42,14 @@ public class Spike : MonoBehaviour
 
         _hurtCollider.enabled = false;
         _anim.SetTrigger("Deactivate");
+    }
+
+    public void Activate()
+    {
+            StartCoroutine(OnActivate());
+    }
+
+    public void DeActivate()
+    {
     }
 }
