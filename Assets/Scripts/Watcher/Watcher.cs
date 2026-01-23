@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ public class Watcher : MonoBehaviour
    
     [SerializeField] protected GameObject _staticEye;
     [SerializeField] protected GameObject _watchingEye;
+
+    public Action<bool> OnActivation;
+
     void Start()
     {
     }
@@ -48,7 +52,9 @@ public class Watcher : MonoBehaviour
         _isFollowing = true;
         _fov.color = _agressiveFovColor;
         _watchingKK = StartCoroutine(WatchKumKum());
-      
+        OnActivation?.Invoke(true);
+
+
     }
 
     protected virtual void Deactivate()
@@ -57,6 +63,7 @@ public class Watcher : MonoBehaviour
         _isFollowing = false;
         _staticEye.SetActive(true);
         _watchingEye.SetActive(false);
+        OnActivation?.Invoke(false);
     }
 
     private IEnumerator KeepFollowing()
