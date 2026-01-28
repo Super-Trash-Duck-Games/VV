@@ -262,6 +262,14 @@ PrefabInstance:
       propertyPath: '_waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1908170854}
+    - target: {fileID: 1622445332647320389, guid: 7c41656800f99084582f392227ff00d9, type: 3}
+      propertyPath: '_waypoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1847768588}
+    - target: {fileID: 1622445332647320389, guid: 7c41656800f99084582f392227ff00d9, type: 3}
+      propertyPath: '_waypoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1908170854}
     - target: {fileID: 3812557271025238721, guid: 7c41656800f99084582f392227ff00d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.8654475
