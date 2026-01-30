@@ -14,7 +14,7 @@ public class Cientist : MonoBehaviour
     private void Start()
     {
         GetDataContents();
-       
+
         _fsm = new FiniteStateMachine();
 
         _fsm.AddState(CientistStates.LaserGunShoot, new CLaserGunState(this, _data));
@@ -23,7 +23,7 @@ public class Cientist : MonoBehaviour
         _fsm.AddState(CientistStates.Death, new CDeathState(this, _data));
         _fsm.AddState(CientistStates.Vulnerable, new CVulnerableState(this, _data));
         _fsm.AddState(CientistStates.Run, new CRunState(this, _data));
-        
+
         _fsm.ChangeState(_stateList[0]);
     }
 
@@ -64,6 +64,42 @@ public class Cientist : MonoBehaviour
     public GameObject Create(GameObject obj)
     {
         return Instantiate(obj);
+    }
+
+    public bool CheckCurrentPosition()
+    {
+        float xPos = transform.position.x;
+
+        switch (_data.targetPosition)
+        {
+            case -1:
+
+                if (xPos < _data.leftMost.position.x)
+                    return true;
+
+                break;
+            case 0:
+
+                if (Mathf.Abs(transform.position.x - _data.middle.position.x) < _data.targetTolerance)
+                    return true;
+
+                break;
+            case 1:
+
+                if (xPos > _data.rightMost.position.x)
+                    return true;
+
+                break;
+        }
+
+        return false;
+    }
+
+    public void SelectRandomPosition()
+    {
+        var rand = Random.Range(0, 2);
+        if (rand == 0) _data.targetPosition = -1;
+        else _data.targetPosition = 1;
     }
 }
 

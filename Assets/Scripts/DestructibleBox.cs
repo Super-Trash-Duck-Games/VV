@@ -9,10 +9,15 @@ public class DestructibleBox : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            _box.SetActive(false);
-            _ps.Play();
-            _boxCollider.enabled = false;
-            Destroy(this.gameObject, 1);
+            Destroy();
         }
+    }
+
+    public void Destroy()
+    {
+        _box.SetActive(false);
+        _ps.Play();
+        _boxCollider.enabled = false;
+        Destroy(this.gameObject, 1);
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2632896651555222672}
   - component: {fileID: 6707725207811133110}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: UpPunchHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3061273274746915016}
   - component: {fileID: 550557983915720098}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: PunchHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433559213273448454}
   - component: {fileID: 2217024146488059319}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: DownPunchHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

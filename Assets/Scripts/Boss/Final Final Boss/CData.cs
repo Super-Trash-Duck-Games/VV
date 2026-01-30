@@ -19,4 +19,7 @@ public class CData
     public float laserGunCooldown;
     public float vulnerableTime;
     public int lives;
+    public int targetPosition;
+    public float targetTolerance;
+    public BoxSpawner boxSpawner;
 }

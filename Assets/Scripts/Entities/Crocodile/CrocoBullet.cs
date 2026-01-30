@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.Mathematics;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Experimental.GraphView.GraphView;
@@ -31,7 +32,6 @@ public class CrocoBullet : MonoBehaviour
         }
 
         StartCoroutine(Move());
-
     }
 
     public void TargetPlayer()
@@ -58,11 +58,15 @@ public class CrocoBullet : MonoBehaviour
 
     private IEnumerator Control()
     {
-        float vert = Input.GetAxisRaw("Vertical");
+        //float vert = Input.GetAxisRaw("Vertical");
         while (gameObject.activeSelf)
         {
-            if (vert != 0)
-                transform.Rotate(new Vector3(0, 0, vert * Time.deltaTime * _rotateSpeed * dir));
+            if (Input.GetAxisRaw("Vertical") != 0)
+            {
+                Debug.Log("Fuckititty");
+
+                transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Vertical") * Time.deltaTime * _rotateSpeed * dir));
+            }
 
             yield return null;
         }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class CSpawnEnemyState : State
 {
-    private Cientist _cientific;
+    private Cientist _cientist;
     private CData _data;
 
-    public CSpawnEnemyState(Cientist cientific, CData data)
+    public CSpawnEnemyState(Cientist cientist, CData data)
     {
-        _cientific = cientific;
+        _cientist = cientist;
         _data = data;
     }
     public override void OnDrawGizmos()
@@ -16,7 +16,29 @@ public class CSpawnEnemyState : State
 
     public override void OnEnter()
     {
-        _cientific._currentState = CientistStates.SpawnEnemy;
+        _cientist._currentState = CientistStates.SpawnEnemy;
+
+        if (!_cientist.CheckCurrentPosition())
+        {
+            fsm.ChangeState(CientistStates.Run);
+            return;
+        }
+
+        switch (_data.targetPosition)
+        {
+            case -1:
+                if (_cientist.transform.position.x < _data.leftMost.position.x)
+                    _data.boxSpawner.CreateBoxWall(false);
+
+                break;
+            case 1:
+                if (_cientist.transform.position.x > _data.rightMost.position.x)
+                    _data.boxSpawner.CreateBoxWall(true);
+
+                break;
+        }
+
+
     }
 
     public override void OnExit()

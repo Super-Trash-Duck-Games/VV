@@ -7,4 +7,5 @@ public class CHPackage : EntityPackage
     public float adjustDistanceRate;
     public float rbLinearDamplingWhileGrappled;
     public float tongueExtensionSpeed;
+    public float ungrappleJumpForce;
 }

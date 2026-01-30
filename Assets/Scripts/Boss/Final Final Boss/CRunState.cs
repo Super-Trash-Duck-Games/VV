@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class CRunState : State
 {
-    private Cientist _cientific;
+    private Cientist _cientist;
     private CData _data;
     private Action _runDirection;
     public CRunState(Cientist cientific, CData data)
     {
-        _cientific = cientific;
+        _cientist = cientific;
         _data = data;
     }
 
@@ -18,11 +18,20 @@ public class CRunState : State
 
     public override void OnEnter()
     {
-        _cientific._currentState = CientistStates.Run;
+        _cientist._currentState = CientistStates.Run;
 
-        var rand = UnityEngine.Random.Range(0, 2);
-        if (rand == 0) _runDirection += RunRight;
-        else _runDirection += RunLeft;
+        switch (_data.targetPosition)
+        {
+            case -1:
+                _runDirection += RunLeft;
+                break;
+            case 0:
+                _runDirection += RunMiddle;
+                break;
+            case 1:
+                _runDirection += RunRight;
+                break;
+        }
     }
 
     public override void OnExit()
@@ -40,18 +49,31 @@ public class CRunState : State
 
     private void RunRight()
     {
-        if (_cientific.transform.position.x < _data.rightMost.position.x)
+        if (_cientist.transform.position.x < _data.rightMost.position.x)
             _data.rb2d.AddForce(Vector2.right * _data.runSpeed * 100 * Time.deltaTime, ForceMode2D.Force);
         else
-            fsm.ChangeState(_cientific.GetCurrentState());
+            fsm.ChangeState(_cientist.GetCurrentState());
     }
 
     private void RunLeft()
     {
-        if (_cientific.transform.position.x > _data.leftMost.position.x)
+        if (_cientist.transform.position.x > _data.leftMost.position.x)
             _data.rb2d.AddForce(Vector2.right * _data.runSpeed * 100 * Time.deltaTime * -1, ForceMode2D.Force);
         else
-            fsm.ChangeState(_cientific.GetCurrentState());
+            fsm.ChangeState(_cientist.GetCurrentState());
+    }
+
+    private void RunMiddle()
+    {
+        if (Mathf.Abs(_cientist.transform.position.x - _data.middle.position.x) > _data.targetTolerance)
+        {
+            if (_cientist.transform.position.x > _data.middle.position.x)
+                _data.rb2d.AddForce(Vector2.right * _data.runSpeed * 100 * Time.deltaTime, ForceMode2D.Force);
+            else if (_cientist.transform.position.x < _data.middle.position.x)
+                _data.rb2d.AddForce(Vector2.right * _data.runSpeed * 100 * Time.deltaTime, ForceMode2D.Force);
+        }
+        else
+            fsm.ChangeState(_cientist.GetCurrentState());
     }
 
     public override void OnTriggerEnter(Collider2D collision)

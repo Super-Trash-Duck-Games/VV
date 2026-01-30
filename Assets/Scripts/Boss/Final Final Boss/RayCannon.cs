@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class RayCannon : MonoBehaviour
     [SerializeField] private float _tolerance;
     private Cannon _cannon;
     [SerializeField] private float _startDelay;
+    public Action AttackFinished;
 
     void Start()
     {
@@ -18,12 +20,17 @@ public class RayCannon : MonoBehaviour
         //StartCoroutine(GetOnPosition(true));
     }
 
-    private IEnumerator GetOnPosition(bool fromLeft)
+    public void Attack(bool fromRight)
     {
-        if (fromLeft)
-            _end.position = new Vector3(_originalEndPos.x * -1, _originalEndPos.y);
-        else
+        StartCoroutine(GetOnPosition(fromRight));
+    }
+
+    private IEnumerator GetOnPosition(bool fromRight)
+    {
+        if (fromRight)
             _end.position = new Vector3(_originalEndPos.x, _originalEndPos.y);
+        else
+            _end.position = new Vector3(_originalEndPos.x * -1, _originalEndPos.y);
 
         //_cannon.transform.position = _end.position;
         _cannon.transform.position = new Vector3(_end.transform.position.x, _cannon.transform.position.y);
@@ -37,10 +44,10 @@ public class RayCannon : MonoBehaviour
         }
 
 
-        StartCoroutine(ToMiddle(fromLeft));
+        StartCoroutine(ToMiddle());
     }
 
-    private IEnumerator ToMiddle(bool fromLeft)
+    private IEnumerator ToMiddle()
     {
         _lr.SetPosition(0, _start.position);
         _lr.SetPosition(1, _end.position);
@@ -57,6 +64,20 @@ public class RayCannon : MonoBehaviour
 
         _cannon.DeactivateLaser();
 
+        StartCoroutine(LeavePosition());
+    }
+
+    private IEnumerator LeavePosition()
+    {
+        while (_cannon.transform.position.y < 15)
+        {
+            _cannon.transform.position = Vector3.MoveTowards(_cannon.transform.position, new Vector2(_cannon.transform.position.x, 16), _cannonSpeed * Time.deltaTime);
+            _lr.SetPosition(0, new Vector2(_start.transform.position.x, _cannon.transform.position.y));
+            _lr.SetPosition(1, new Vector2(_end.transform.position.x, _cannon.transform.position.y));
+            yield return null;
+        }
+
+        AttackFinished?.Invoke();
     }
 
 }

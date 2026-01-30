@@ -107,3 +107,4 @@ MonoBehaviour:
   adjustDistanceRate: 3
   rbLinearDamplingWhileGrappled: 1
   tongueExtensionSpeed: 5
+  ungrappleJumpForce: 11

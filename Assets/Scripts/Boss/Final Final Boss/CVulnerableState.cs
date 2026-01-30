@@ -32,7 +32,11 @@ public class CVulnerableState : State
 
     public override void OnTriggerEnter(Collider2D collision)
     {
-        if (collision.gameObject.layer == 7) _data.lives--;
+        if (collision.gameObject.layer == 7)
+        {
+            _vulnerableTime = 0;
+            _data.lives--;
+        }
     }
 
     public override void OnUpdate()

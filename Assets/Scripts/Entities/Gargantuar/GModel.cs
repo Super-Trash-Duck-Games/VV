@@ -48,11 +48,12 @@ public class GModel : Model
 
     private IEnumerator Dash(Vector2 direction, GameObject hitbox)
     {
-        hitbox.SetActive(true);
+
         float counter = 0;
         SpecialDir?.Invoke(direction);
 
         yield return new WaitForSeconds(_gp.dashDelay);
+        hitbox.SetActive(true);
         _rb2d.AddForce(direction * _gp.punchDash, ForceMode2D.Impulse);
 
         while (counter < _gp.hitDuration)
