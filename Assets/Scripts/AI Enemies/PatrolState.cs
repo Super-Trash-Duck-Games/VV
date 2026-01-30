@@ -1,15 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PatrolState : State
 {
     private AIEnemy _aie;
-    private Transform[] _waypoints;
+    private List<Vector2> _waypoints;
     private int _currentWPIndex;
     private Rigidbody2D _rb2d;
     private EntityPackage _mp;
     private bool _goingRight = true;
     private bool _mirrorOnPatrol;
-    public PatrolState(AIEnemy aie, Transform[] waypoints, Rigidbody2D rb2d, EntityPackage mp)
+    public PatrolState(AIEnemy aie, List<Vector2> waypoints, Rigidbody2D rb2d, EntityPackage mp)
     {
         _aie = aie;
         _waypoints = waypoints;
@@ -50,9 +51,12 @@ public class PatrolState : State
 
     public override void OnFixedUpdate()
     {
-        Vector2 moveDir;
+        Vector2 pos = _waypoints[_currentWPIndex];
+        GoToPosition(pos);
 
-        if (_goingRight)
+        //Vector2 moveDir;
+
+        /*if (_goingRight)
         {
             moveDir = Vector2.right;
             if (_rb2d.position.x > _waypoints[_currentWPIndex].position.x)
@@ -71,13 +75,30 @@ public class PatrolState : State
                 _goingRight = true;
                 ChangeCurrentWaypoint();
             }
+        }*/
+
+        //moveDir.y = 0;
+        //_rb2d.MovePosition(_rb2d.position + moveDir * _mp.speed * Time.deltaTime);
+    }
+    private void GoToPosition(Vector3 endPos) 
+    {
+        Vector2 dir = endPos - _aie.transform.position;
+        dir.Normalize();
+        dir.y = 0;
+
+        _goingRight = dir.x < 0;
+        _mirrorOnPatrol = !_goingRight;
+
+        if(Vector3.Distance(_aie.transform.position, endPos) < .5f) 
+        {
+            _currentWPIndex++;
+            if (_currentWPIndex >= _waypoints.Count)
+                _currentWPIndex = 0;
+
+            fsm.ChangeState(AIEnemiesStates.PatrolPoint);
         }
 
-        moveDir.y = 0;
-        _rb2d.MovePosition(_rb2d.position + moveDir * _mp.speed * Time.deltaTime);
-
-
-
+        _rb2d.MovePosition(_rb2d.position += dir * _mp.speed * Time.deltaTime);
     }
 
     private void ChangeCurrentWaypoint()

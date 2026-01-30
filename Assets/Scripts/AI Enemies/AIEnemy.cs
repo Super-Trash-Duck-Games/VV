@@ -1,5 +1,6 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AIEnemy : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class AIEnemy : MonoBehaviour
     public AIEnemyView view { get; protected set; }
 
     [Header("Patrol")]
-    [SerializeField] protected Transform[] _waypoints;
+    [SerializeField] protected float _patrolAreaDistance;
+    [SerializeField] protected List<Vector2> _waypoints;
     [SerializeField] protected GameObject _movementPackage;
 
     [Header("PatrolPoint")]
@@ -46,6 +48,27 @@ public class AIEnemy : MonoBehaviour
         SetupFSM();
         SetupWachout();
     }
+    protected List<Vector2> SetWaypoints() 
+    {
+        Vector2 point = Vector3.zero;
+
+        for (int i = 0; i < 2; i++) 
+        {
+            
+            if(i <= 0) 
+            {
+                point = new Vector3(transform.position.x - _patrolAreaDistance, transform.position.y, transform.position.z);
+                _waypoints.Add(point);
+            }
+            else 
+            {
+                point = new Vector3(transform.position.x + _patrolAreaDistance, transform.position.y, transform.position.z);
+                _waypoints.Add(point);
+            }
+        }
+
+        return _waypoints;
+    }
 
     protected virtual void SetupComponents()
     {
@@ -59,7 +82,7 @@ public class AIEnemy : MonoBehaviour
     {
         _fsm = new FiniteStateMachine();
 
-        _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, _waypoints, _rb2d, _movementPackage.GetComponent<EntityPackage>()));
+        _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, SetWaypoints(), _rb2d, _movementPackage.GetComponent<EntityPackage>()));
         _fsm.AddState(AIEnemiesStates.PatrolPoint, new PatrolPointState(this, _waitTime));
         _fsm.AddState(AIEnemiesStates.Dizzy, new DizzyState(this, _dizzyTime, view));
         _fsm.AddState(AIEnemiesStates.Attack, new AttackState(this, _cooldown));
@@ -159,6 +182,12 @@ public class AIEnemy : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x - _patrolAreaDistance, transform.position.y, transform.position.z), .2f);
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x + _patrolAreaDistance, transform.position.y, transform.position.z), .2f);
+
+        Gizmos.color = Color.white;
+
         if (!_castsSetup) return;
         Gizmos.DrawLine(_watchPoints[0], _watchPoints[1]);
         Gizmos.DrawLine(_watchPoints[2], _watchPoints[3]);
