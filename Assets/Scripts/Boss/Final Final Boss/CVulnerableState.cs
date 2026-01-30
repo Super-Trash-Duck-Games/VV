@@ -36,6 +36,7 @@ public class CVulnerableState : State
         {
             _vulnerableTime = 0;
             _data.lives--;
+            _cientific.anim.SetTrigger("GetHit");
         }
     }
 

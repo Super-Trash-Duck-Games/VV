@@ -20,6 +20,7 @@ public class CRayGunState : State
     public override void OnEnter()
     {
         _cientist._currentState = CientistStates.RayGunShoot;
+        _cientist.anim.SetTrigger("PresButton");
 
         if (!_cientist.CheckCurrentPosition())
         {
@@ -42,6 +43,7 @@ public class CRayGunState : State
     public override void OnExit()
     {
         _data.rayCannon.AttackFinished -= OnAttackFinished;
+
     }
 
     public override void OnFixedUpdate()

@@ -37,12 +37,14 @@ public class CLaserGunState : State
         _bulletCounter = 0;
 
         _cientist.StartCoroutine(ShootSequence());
+
+        _cientist.anim.SetBool("GunActive", true);
     }
 
     public override void OnExit()
     {
         _cientist.SelectRandomPosition();
-        Debug.Log("Fuckititty");
+        _cientist.anim.SetBool("GunActive", false);
     }
 
     public override void OnFixedUpdate()
@@ -76,6 +78,7 @@ public class CLaserGunState : State
             {
                 timer = 0;
                 Shoot();
+                _cientist.anim.SetTrigger("ShootGun");
                 _bulletCounter++;
             }
         }

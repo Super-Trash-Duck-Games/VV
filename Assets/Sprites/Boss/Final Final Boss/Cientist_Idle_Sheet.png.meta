@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 4a94b1326abcd234a8d4946959827652
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cientist_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 224
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b0036f7aa3cc6c43860ebc1828a7782
+      internalID: -341399947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 224
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.45833334, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaefbbaade48c354fa2bf1e818353e9e
+      internalID: -1956457199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 224
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b609c25e6c0b71640ab33974952e2f05
+      internalID: 447869800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 224
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606cd67426238b14abaf4be093b4706f
+      internalID: 916351479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 128
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6aaf3efe4264947849c7dff1347b1f
+      internalID: 345816796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 128
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba828a55b915d043815b2c26cb1ce77
+      internalID: 858984516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 128
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c769375442b44da45a9f78424c3047af
+      internalID: 578960717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 128
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e928052b8043f184c9cb6c73c331b376
+      internalID: 1470028318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 32
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.45833334, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcbce180a664d046a4819aff8613b49
+      internalID: -540117572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 32
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.45833334, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2023c3024e044c4bb5d916fa538b55c
+      internalID: 549357027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 32
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f5eb4497483ed4a8b89384c4264f32
+      internalID: -1533722621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 32
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1225981b2894347893336b67bc9c08
+      internalID: 424350774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e1b2f4f94126e44469c0c467b0c0303b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cientist_Idle_0: -341399947
+      Cientist_Idle_1: -1956457199
+      Cientist_Idle_10: -1533722621
+      Cientist_Idle_11: 424350774
+      Cientist_Idle_2: 447869800
+      Cientist_Idle_3: 916351479
+      Cientist_Idle_4: 345816796
+      Cientist_Idle_5: 858984516
+      Cientist_Idle_6: 578960717
+      Cientist_Idle_7: 1470028318
+      Cientist_Idle_8: -540117572
+      Cientist_Idle_9: 549357027
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

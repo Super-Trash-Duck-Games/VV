@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CientificForceField : MonoBehaviour
+public class CientistForceField : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _forceFieldPS;
     [SerializeField] private AreaEffector2D _forceArea;

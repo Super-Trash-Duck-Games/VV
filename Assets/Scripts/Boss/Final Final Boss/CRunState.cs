@@ -32,12 +32,15 @@ public class CRunState : State
                 _runDirection += RunRight;
                 break;
         }
+
+        _cientist.anim.SetBool("Run", true);
     }
 
     public override void OnExit()
     {
         _data.rb2d.linearVelocity = Vector2.zero;
         _runDirection = null;
+        _cientist.anim.SetBool("Run", false);
     }
 
     public override void OnFixedUpdate()

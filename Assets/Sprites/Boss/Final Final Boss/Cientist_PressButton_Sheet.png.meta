@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: fb441a10eb959e34aa268fbe1b87534a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 224
+        width: 34
+        height: 40
+      alignment: 9
+      pivot: {x: 0.4117647, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3390014a42bf24d96604b249f16de7
+      internalID: 942328121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 224
+        width: 34
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4117647, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51947a4dff021664b97e637b55eb8a6f
+      internalID: -25993604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 224
+        width: 34
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4117647, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83dbead00f342f94f886a946e47aa5dc
+      internalID: 28908565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 131
+        width: 34
+        height: 39
+      alignment: 9
+      pivot: {x: 0.38235295, y: 0.025641026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79a6a57956f60a4bba1a1882dab5607
+      internalID: -1375003219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 127
+        width: 36
+        height: 40
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398eef17aea8b8442950b59d80b1231b
+      internalID: 1174424295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 128
+        width: 38
+        height: 40
+      alignment: 9
+      pivot: {x: 0.31578946, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac0d88681c6a3e468fd84223f7869d9
+      internalID: -1527070978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 33
+        width: 42
+        height: 40
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335badd1cd1dc7e40904e9290678e019
+      internalID: -319506125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_PressButton_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 32
+        width: 34
+        height: 40
+      alignment: 9
+      pivot: {x: 0.4117647, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce66c283b4cafc4a9fe754e2af6114f
+      internalID: -1477783826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dae5a5d00cfb4b44493c28ff3942aae4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cientist_PressButton_Sheet_0: 942328121
+      Cientist_PressButton_Sheet_1: -25993604
+      Cientist_PressButton_Sheet_2: 28908565
+      Cientist_PressButton_Sheet_3: -1375003219
+      Cientist_PressButton_Sheet_4: 1174424295
+      Cientist_PressButton_Sheet_5: -1527070978
+      Cientist_PressButton_Sheet_6: -1612194366
+      Cientist_PressButton_Sheet_7: -319506125
+      Cientist_PressButton_Sheet_8: -1477783826
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,10 +10,12 @@ public class Cientist : MonoBehaviour
     private int _stateListCounter;
 
     [SerializeField] private CData _data;
+    public Animator anim;
 
     private void Start()
     {
         GetDataContents();
+        if(anim == null) anim = GetComponent<Animator>();
 
         _fsm = new FiniteStateMachine();
 
@@ -29,7 +31,7 @@ public class Cientist : MonoBehaviour
 
     private void GetDataContents()
     {
-        if (_data.ff == null) _data.ff = GetComponentInChildren<CientificForceField>();
+        if (_data.ff == null) _data.ff = GetComponentInChildren<CientistForceField>();
         if (_data.rayCannon == null) _data.rayCannon = FindFirstObjectByType<RayCannon>();
         if (_data.rb2d == null) _data.rb2d = GetComponent<Rigidbody2D>();
         if (_data.kkPos == null) _data.kkPos = FindFirstObjectByType<Kumkum>().transform;

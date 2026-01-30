@@ -37,12 +37,14 @@ public class CSpawnEnemyState : State
 
                 break;
         }
+        _cientist.anim.SetBool("ButtonActive", true);
 
 
     }
 
     public override void OnExit()
     {
+        _cientist.anim.SetBool("ButtonActive", false);
     }
 
     public override void OnFixedUpdate()

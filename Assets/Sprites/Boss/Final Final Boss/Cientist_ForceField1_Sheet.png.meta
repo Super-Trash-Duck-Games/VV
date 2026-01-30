@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd18fe2908d43c64eb1206c3cdacad2b
+guid: 4d64374b26889ab4398de127a96e3ea8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,12 +95,78 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cientist_ForceField1_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 32
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad1509f91b78104ea68ad2874fdee07
+      internalID: 806978731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_ForceField1_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 32
+        width: 24
+        height: 39
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a51bee2cfb744a4781243de6e815ac7
+      internalID: -1807409228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cientist_ForceField1_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 35
+        width: 24
+        height: 41
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80abb83a258f92d4280d531ce3dceb42
+      internalID: 756053390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 6b2d889dc1d6cf247a69485c51ca94b7
     internalID: 0
     vertices: []
     indices: 
@@ -108,8 +174,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cientist_ForceField1_Sheet_0: 806978731
+      Cientist_ForceField1_Sheet_1: -1807409228
+      Cientist_ForceField1_Sheet_2: 756053390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

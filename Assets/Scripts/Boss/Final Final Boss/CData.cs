@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class CData 
 {
-    public CientificForceField ff;
+    public CientistForceField ff;
     public Transform leftMost;
     public Transform middle;
     public Transform rightMost;
