@@ -258,9 +258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIGargEnemy
   entityType: 1
   currentState: 0
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  _patrolAreaDistance: 0
+  _waypoints: []
   _movementPackage: {fileID: 414885920267686423, guid: c91a32264ca5648479054ad68de99711, type: 3}
   _waitTime: 1
   _dizzyTime: 4

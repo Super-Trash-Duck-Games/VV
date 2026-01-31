@@ -162,9 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AICrocoEnemy
   entityType: 4
   currentState: 0
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  _patrolAreaDistance: 0
+  _waypoints: []
   _movementPackage: {fileID: 5947755006843161147, guid: cfeb17802aad968458838cc4c55f3386, type: 3}
   _waitTime: 2
   _dizzyTime: 4

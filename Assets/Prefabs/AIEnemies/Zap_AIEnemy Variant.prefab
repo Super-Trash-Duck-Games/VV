@@ -5142,9 +5142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIZapEnemy
   entityType: 3
   currentState: 0
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  _patrolAreaDistance: 0
+  _waypoints: []
   _movementPackage: {fileID: 533554406465359028, guid: 5c875a4a61e7bfc4fbcb74dc2cd8f5c1, type: 3}
   _waitTime: 1
   _dizzyTime: 4
@@ -5159,3 +5158,4 @@ MonoBehaviour:
   _cooldown: 0.7
   _ps: {fileID: 5631477164920916980}
   _zone: {fileID: 5627529234730379353}
+  _electrifiedSpeed: 0

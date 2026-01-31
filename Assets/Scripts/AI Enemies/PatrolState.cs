@@ -51,8 +51,7 @@ public class PatrolState : State
 
     public override void OnFixedUpdate()
     {
-        Vector2 pos = _waypoints[_currentWPIndex];
-        GoToPosition(pos);
+        GoToPosition(_waypoints[_currentWPIndex]);
 
         //Vector2 moveDir;
 

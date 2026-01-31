@@ -59,13 +59,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d641e3f0860654d42a62b17474b04a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AIEnemy
+  entityType: 0
   currentState: 0
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  _patrolAreaDistance: 0
+  _waypoints: []
   _movementPackage: {fileID: 0}
   _waitTime: 2
   _dizzyTime: 4
+  isDizzy: 0
+  _watchDistance: 0
+  _watchAmplitude: 0
+  _offset: {x: 0, y: 0}
+  _watchPoints: []
+  _kkLM:
+    serializedVersion: 2
+    m_Bits: 0
+  _cooldown: 0.7
 --- !u!61 &4010987961699244336
 BoxCollider2D:
   m_ObjectHideFlags: 0
