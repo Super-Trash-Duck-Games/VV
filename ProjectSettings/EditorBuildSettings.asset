@@ -9,11 +9,41 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Playground.unity
+    guid: 0598155866f3459409ee068e182d8d06
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1f7e992cb0593bf4d809ecffee3472a2
   - enabled: 1
     path: Assets/Scenes/Wardrobe.unity
     guid: 8e561ad6467119446a7794c93f5fdf7c
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainLevels/Main/Level1.unity
+    guid: 83562c4698766e8428e5e170c034a920
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainLevels/Main/Level2.unity
+    guid: 65cdceb232bb09f45b68aa1c398b8a3b
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainLevels/Tutorials/ChamTuto.unity
+    guid: cf3d72ccc10ea114d835d06174566195
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainLevels/Tutorials/CrocoTuto.unity
+    guid: 7f1677421dac79c46b0a0ba7b391be26
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainLevels/Tutorials/GarGarTuto.unity
+    guid: 81209309c902d7749b961e31605b6b4a
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainLevels/Tutorials/KumKumTuto.unity
+    guid: a87c5b630f122a14198739192f4cbb00
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainLevels/Tutorials/ZapTuto.unity
+    guid: 3885144ad3f10e04f823b126066b88cc
+  - enabled: 1
+    path: Assets/Scenes/Levels/FinalBoss.unity
+    guid: 3f623c5301bac9a48a63dbc356a97fd9
+  - enabled: 1
+    path: Assets/Scenes/Levels/FinalFinalBoss.unity
+    guid: 340c999ee38e8e644a936181e01fc35d
   - enabled: 1
     path: Assets/Scenes/Tutorial Levels/ChameleonTutorial.unity
     guid: fdfcd5b62e4f4574eb9bdade4b0b8bfb

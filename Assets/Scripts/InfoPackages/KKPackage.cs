@@ -9,4 +9,6 @@ public class KKPackage : EntityPackage
 
     public float sizeGrowth;
     public float attackSpeed;
+
+    public float slimeCeilingDetectorLenght;
 }

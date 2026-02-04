@@ -17,7 +17,6 @@ public class Cannon : MonoBehaviour
 
     public void ActivateLaser()
     {
-        Debug.Log("Fuckititty");
         _shooting = true;
         StartCoroutine(Laser(true));
         StartCoroutine(FollowCannon());

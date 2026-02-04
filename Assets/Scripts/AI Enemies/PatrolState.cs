@@ -4,16 +4,16 @@ using UnityEngine;
 public class PatrolState : State
 {
     private AIEnemy _aie;
-    private List<Vector2> _waypoints;
+    //private List<Vector2> _waypoints;
     private int _currentWPIndex;
     private Rigidbody2D _rb2d;
     private EntityPackage _mp;
     private bool _goingRight = true;
     private bool _mirrorOnPatrol;
-    public PatrolState(AIEnemy aie, List<Vector2> waypoints, Rigidbody2D rb2d, EntityPackage mp)
+    public PatrolState(AIEnemy aie, Rigidbody2D rb2d, EntityPackage mp)
     {
         _aie = aie;
-        _waypoints = waypoints;
+        //_waypoints = waypoints;
         _mp = mp;
         _rb2d = rb2d;
         _currentWPIndex = 0;
@@ -26,7 +26,6 @@ public class PatrolState : State
 
     private void OnPlayerSeen()
     {
-        //_aie.OnPlayerSeen -= OnPlayerSeen;
         _aie.OnPlayerSeen = null;
         Debug.Log("player seen during Patrol");
         fsm.ChangeState(AIEnemiesStates.Attack);
@@ -43,7 +42,6 @@ public class PatrolState : State
 
     public override void OnExit()
     {
-        //_aie.OnPlayerSeen -= OnPlayerSeen;
         _aie.OnPlayerSeen = null;
         _aie.view.Move(false);
 
@@ -51,53 +49,29 @@ public class PatrolState : State
 
     public override void OnFixedUpdate()
     {
-        GoToPosition(_waypoints[_currentWPIndex]);
-
-        //Vector2 moveDir;
-
-        /*if (_goingRight)
-        {
-            moveDir = Vector2.right;
-            if (_rb2d.position.x > _waypoints[_currentWPIndex].position.x)
-            {
-                _mirrorOnPatrol = true;
-                _goingRight = false;
-                ChangeCurrentWaypoint();
-            }
-        }
-        else
-        {
-            moveDir = Vector2.right * -1;
-            if (_rb2d.position.x < _waypoints[_currentWPIndex].position.x)
-            {
-                _mirrorOnPatrol = false;
-                _goingRight = true;
-                ChangeCurrentWaypoint();
-            }
-        }*/
-
-        //moveDir.y = 0;
-        //_rb2d.MovePosition(_rb2d.position + moveDir * _mp.speed * Time.deltaTime);
+        GoToPosition(_aie.waypoints[_currentWPIndex]);
     }
+
     private void GoToPosition(Vector3 endPos) 
     {
         Vector2 dir = endPos - _aie.transform.position;
         dir.Normalize();
-        dir.y = 0;
+        //dir.y = 0;
 
         _goingRight = dir.x < 0;
         _mirrorOnPatrol = !_goingRight;
 
-        if(Vector3.Distance(_aie.transform.position, endPos) < .5f) 
+        if(Vector3.Distance(new Vector2( _aie.transform.position.x, _aie.transform.position.y), new Vector2(endPos.x, _aie.transform.position.y)) < .5f) 
         {
             _currentWPIndex++;
-            if (_currentWPIndex >= _waypoints.Count)
+            if (_currentWPIndex >= _aie.waypoints.Count)
                 _currentWPIndex = 0;
 
             fsm.ChangeState(AIEnemiesStates.PatrolPoint);
         }
 
         _rb2d.MovePosition(_rb2d.position += dir * _mp.speed * Time.deltaTime);
+        //_rb2d.AddForce(_rb2d.position -= dir * _mp.speed * Time.deltaTime, ForceMode2D.Force);
     }
 
     private void ChangeCurrentWaypoint()

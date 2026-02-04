@@ -58,3 +58,4 @@ MonoBehaviour:
   specialStompForce: 15
   sizeGrowth: 3
   attackSpeed: 4
+  slimeCeilingDetectorLenght: 1

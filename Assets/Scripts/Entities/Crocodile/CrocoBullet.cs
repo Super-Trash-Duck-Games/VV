@@ -63,8 +63,6 @@ public class CrocoBullet : MonoBehaviour
         {
             if (Input.GetAxisRaw("Vertical") != 0)
             {
-                Debug.Log("Fuckititty");
-
                 transform.Rotate(new Vector3(0, 0, Input.GetAxisRaw("Vertical") * Time.deltaTime * _rotateSpeed * dir));
             }
 

@@ -14,7 +14,7 @@ public class AIEnemy : MonoBehaviour
 
     [Header("Patrol")]
     [SerializeField] protected float _patrolAreaDistance;
-    [SerializeField] protected List<Vector2> _waypoints;
+    public List<Vector2> waypoints;
     [SerializeField] protected GameObject _movementPackage;
 
     [Header("PatrolPoint")]
@@ -44,30 +44,40 @@ public class AIEnemy : MonoBehaviour
 
     protected virtual void OnStart()
     {
+        if (waypoints == null)
+            SetWaypoints();
         SetupComponents();
         SetupFSM();
         SetupWachout();
     }
-    protected List<Vector2> SetWaypoints() 
+    protected List<Vector2> SetWaypoints()
     {
         Vector2 point = Vector3.zero;
 
-        for (int i = 0; i < 2; i++) 
+        for (int i = 0; i < 2; i++)
         {
-            
-            if(i <= 0) 
+
+            if (i <= 0)
             {
                 point = new Vector3(transform.position.x - _patrolAreaDistance, transform.position.y, transform.position.z);
-                _waypoints.Add(point);
+                waypoints.Add(point);
             }
-            else 
+            else
             {
                 point = new Vector3(transform.position.x + _patrolAreaDistance, transform.position.y, transform.position.z);
-                _waypoints.Add(point);
+                waypoints.Add(point);
             }
         }
 
-        return _waypoints;
+        return waypoints;
+    }
+
+    public void SetWaypoints(Transform[] wp)
+    {
+        foreach (Transform t in wp)
+        {
+            waypoints.Add(t.position);
+        }
     }
 
     protected virtual void SetupComponents()
@@ -82,7 +92,7 @@ public class AIEnemy : MonoBehaviour
     {
         _fsm = new FiniteStateMachine();
 
-        _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, SetWaypoints(), _rb2d, _movementPackage.GetComponent<EntityPackage>()));
+        _fsm.AddState(AIEnemiesStates.Patrol, new PatrolState(this, _rb2d, _movementPackage.GetComponent<EntityPackage>()));
         _fsm.AddState(AIEnemiesStates.PatrolPoint, new PatrolPointState(this, _waitTime));
         _fsm.AddState(AIEnemiesStates.Dizzy, new DizzyState(this, _dizzyTime, view));
         _fsm.AddState(AIEnemiesStates.Attack, new AttackState(this, _cooldown));

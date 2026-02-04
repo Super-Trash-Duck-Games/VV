@@ -43,7 +43,8 @@ public class CLaserGunState : State
 
     public override void OnExit()
     {
-        _cientist.SelectRandomPosition();
+        if (_cientist.GetCurrentState() != CientistStates.LaserGunShoot)
+            _cientist.SelectRandomPosition();
         _cientist.anim.SetBool("GunActive", false);
     }
 

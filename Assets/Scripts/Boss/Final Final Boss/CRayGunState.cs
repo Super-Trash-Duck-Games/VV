@@ -19,6 +19,8 @@ public class CRayGunState : State
 
     public override void OnEnter()
     {
+        //_cientist.SelectRandomPosition();
+
         _cientist._currentState = CientistStates.RayGunShoot;
         _cientist.anim.SetTrigger("PresButton");
 
@@ -43,6 +45,7 @@ public class CRayGunState : State
     public override void OnExit()
     {
         _data.rayCannon.AttackFinished -= OnAttackFinished;
+        _data.ff.DeactivateForceField();
 
     }
 
@@ -60,6 +63,7 @@ public class CRayGunState : State
 
     private void OnAttackFinished()
     {
+        _data.targetPosition = 0;
         fsm.ChangeState(_cientist.GetNextState());
     }
 }

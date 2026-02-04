@@ -114,6 +114,9 @@ public class KKModel : Model
             return;
         }
 
+        _kumKum.normalCollider.enabled = false;
+        _kumKum.slimeCollider.enabled = true;
+
         _crouching = true;
         OnCrouch.Invoke(_crouching);
     }
@@ -121,6 +124,24 @@ public class KKModel : Model
     public void CrouchRelease()
     {
         _crouching = false;
+        if (_kumKum.CeilingDetection())
+            _kumKum.StartCoroutine(UnCrouchHalt());
+        else
+        {
+            _kumKum.normalCollider.enabled = true;
+            _kumKum.slimeCollider.enabled = false;
+            OnCrouch?.Invoke(_crouching);
+        }
+    }
+
+    private IEnumerator UnCrouchHalt()
+    {
+        while (_kumKum.CeilingDetection())
+        {
+            yield return null;
+        }
+        _kumKum.normalCollider.enabled = true;
+        _kumKum.slimeCollider.enabled = false;
         OnCrouch?.Invoke(_crouching);
     }
 

@@ -9,12 +9,13 @@ public class CientistForceField : MonoBehaviour
 
     [SerializeField] private Kumkum _kk;
     [SerializeField] private bool _ffActive;
+    [SerializeField] private Animator _anim;
 
     private void Awake()
     {
-        if(_forceFieldPS == null) _forceFieldPS = GetComponent<ParticleSystem>();
-        if(_forceArea == null ) _forceArea = GetComponent<AreaEffector2D>();
-        if(_forceFieldCollider == null) _forceFieldCollider = GetComponent<Collider2D>();
+        if (_forceFieldPS == null) _forceFieldPS = GetComponent<ParticleSystem>();
+        if (_forceArea == null) _forceArea = GetComponent<AreaEffector2D>();
+        if (_forceFieldCollider == null) _forceFieldCollider = GetComponent<Collider2D>();
 
         _kk = FindFirstObjectByType<Kumkum>();
     }
@@ -29,8 +30,15 @@ public class CientistForceField : MonoBehaviour
         StartCoroutine(Activate());
     }
 
+    public void DeactivateForceField()
+    {
+        _ffActive = false;
+        _anim.SetBool("ForceFieldActive", false);
+    }
+
     private IEnumerator Activate()
     {
+        _anim.SetBool("ForceFieldActive", true);
         _ffActive = true;
 
         _forceFieldCollider.enabled = true;

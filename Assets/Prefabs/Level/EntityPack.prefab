@@ -126,6 +126,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4228227196359968892, guid: 9451816718fa8c1408546694098e3f96, type: 3}
+      propertyPath: slimeCollider
+      value: 
+      objectReference: {fileID: 5150970514183422283}
+    - target: {fileID: 4228227196359968892, guid: 9451816718fa8c1408546694098e3f96, type: 3}
+      propertyPath: normalCollider
+      value: 
+      objectReference: {fileID: 4169260497768922400}
     - target: {fileID: 4321411323950298904, guid: 9451816718fa8c1408546694098e3f96, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -133,6 +141,14 @@ PrefabInstance:
     - target: {fileID: 4683743671219104154, guid: 9451816718fa8c1408546694098e3f96, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154028602932647198, guid: 9451816718fa8c1408546694098e3f96, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135567089278221570, guid: 9451816718fa8c1408546694098e3f96, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6639835571948411966, guid: 9451816718fa8c1408546694098e3f96, type: 3}
       propertyPath: m_Name
@@ -172,6 +188,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3568546076082679689, guid: 9451816718fa8c1408546694098e3f96, type: 3}
   m_PrefabInstance: {fileID: 71254749934703701}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &4169260497768922400 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4116595191274498421, guid: 9451816718fa8c1408546694098e3f96, type: 3}
+  m_PrefabInstance: {fileID: 71254749934703701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4202012293481126953 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4228227196359968892, guid: 9451816718fa8c1408546694098e3f96, type: 3}
@@ -183,6 +204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d7d13eda3163347a15b4070f1aee3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kumkum
+--- !u!70 &5150970514183422283 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5154028602932647198, guid: 9451816718fa8c1408546694098e3f96, type: 3}
+  m_PrefabInstance: {fileID: 71254749934703701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &986388657100789981
 PrefabInstance:
   m_ObjectHideFlags: 0

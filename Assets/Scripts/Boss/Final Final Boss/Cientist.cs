@@ -102,6 +102,7 @@ public class Cientist : MonoBehaviour
         var rand = Random.Range(0, 2);
         if (rand == 0) _data.targetPosition = -1;
         else _data.targetPosition = 1;
+
     }
 }
 

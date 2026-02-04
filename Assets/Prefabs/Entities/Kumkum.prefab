@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 2703508515432812661}
   - component: {fileID: 6135567089278221570}
   - component: {fileID: 4116595191274498421}
+  - component: {fileID: 5154028602932647198}
   m_Layer: 3
   m_Name: Kumkum
   m_TagString: Untagged
@@ -348,6 +349,11 @@ MonoBehaviour:
   _kkPM: {fileID: 6200000, guid: cfaed3e21995f6449a4aa203260b4ae3, type: 2}
   _stompPS: {fileID: 8690965585569168168}
   _stompCollider: {fileID: 3360953219470320478}
+  _ceilingLM:
+    serializedVersion: 2
+    m_Bits: 1024
+  normalCollider: {fileID: 0}
+  slimeCollider: {fileID: 0}
 --- !u!114 &2703508515432812661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +430,43 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012322336, y: 0.46875}
   m_Size: {x: 0.67464465, y: 0.9375}
   m_Direction: 0
+--- !u!70 &5154028602932647198
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639835571948411966}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.06}
+  m_Size: {x: 0.89, y: 0.13}
+  m_Direction: 1
 --- !u!1 &7661635062951311219
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +573,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0

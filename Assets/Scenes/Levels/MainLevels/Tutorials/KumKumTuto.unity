@@ -727,7 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1565933457}
   - component: {fileID: 1565933456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Platform - SplitPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565933455}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -12142,7 +12142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1911144161}
   - component: {fileID: 1911144160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Platform - SplitPlatform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12156,7 +12156,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911144159}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -12262,10 +12262,6 @@ PrefabInstance:
     - target: {fileID: 4434500107216078979, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6185918473901418839, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

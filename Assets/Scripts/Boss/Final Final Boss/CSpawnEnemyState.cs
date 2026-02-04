@@ -18,6 +18,8 @@ public class CSpawnEnemyState : State
     {
         _cientist._currentState = CientistStates.SpawnEnemy;
 
+        if (_data.targetPosition == 0) _cientist.SelectRandomPosition();
+
         if (!_cientist.CheckCurrentPosition())
         {
             fsm.ChangeState(CientistStates.Run);
@@ -28,18 +30,24 @@ public class CSpawnEnemyState : State
         {
             case -1:
                 if (_cientist.transform.position.x < _data.leftMost.position.x)
+                {
+                    _data.bringer.Bring(false);
                     _data.boxSpawner.CreateBoxWall(false);
+                }
 
                 break;
             case 1:
                 if (_cientist.transform.position.x > _data.rightMost.position.x)
+                {
+                    _data.bringer.Bring(true);
                     _data.boxSpawner.CreateBoxWall(true);
+                }
 
                 break;
         }
         _cientist.anim.SetBool("ButtonActive", true);
 
-
+        fsm.ChangeState(_cientist.GetNextState());
     }
 
     public override void OnExit()

@@ -22,4 +22,5 @@ public class CData
     public int targetPosition;
     public float targetTolerance;
     public BoxSpawner boxSpawner;
+    public EnemyBringer bringer;
 }

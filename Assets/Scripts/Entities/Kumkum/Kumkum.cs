@@ -9,6 +9,8 @@ public class Kumkum : Entity
     private KKView _kkView;
     private KKController _kkController;
 
+    private KKPackage _kKPackage;
+
     [Header("Slime stuff")]
     public bool crouching;
     [SerializeField] private Vector2 _wallCast;
@@ -17,11 +19,14 @@ public class Kumkum : Entity
     [SerializeField] private PhysicsMaterial2D _kkPM;
     [SerializeField] private ParticleSystem _stompPS;
     [SerializeField] private Collider2D _stompCollider;
+    [SerializeField] private LayerMask _ceilingLM;
+    public Collider2D normalCollider, slimeCollider;
 
 
     protected override void MVC()
     {
-        _kkModel = new KKModel(this, _rb2d, _chPackageGO.GetComponent<KKPackage>(), _kkPM, _stompCollider);
+        _kKPackage = _chPackageGO.GetComponent<KKPackage>();
+        _kkModel = new KKModel(this, _rb2d, _kKPackage, _kkPM, _stompCollider);
         _kkView = new KKView(_anim, this, _kkModel, _stompPS);
         _kkController = new KKController(_kkModel);
     }
@@ -62,6 +67,15 @@ public class Kumkum : Entity
         }
     }
 
+    public bool CeilingDetection()
+    {
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, transform.position + transform.up * _kKPackage.slimeCeilingDetectorLenght, _ceilingLM);
+        if (hit.collider != null)
+            return true;
+        else
+            return false;
+    }
+
     public void Death()
     {
         _kkView.Death();
@@ -98,5 +112,7 @@ public class Kumkum : Entity
         base.OnDrawGizmos();
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position + new Vector3(-_wallCast.x, _wallCast.y), transform.position + new Vector3(_wallCast.x, _wallCast.y));
+        if (!Application.isPlaying) return;
+        Gizmos.DrawLine(transform.position, transform.position + transform.up * _kKPackage.slimeCeilingDetectorLenght);
     }
 }
