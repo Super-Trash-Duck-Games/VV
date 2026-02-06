@@ -354,6 +354,7 @@ MonoBehaviour:
     m_Bits: 1024
   normalCollider: {fileID: 0}
   slimeCollider: {fileID: 0}
+  _restartDelay: 2
 --- !u!114 &2703508515432812661
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,4 +23,7 @@ public class CData
     public float targetTolerance;
     public BoxSpawner boxSpawner;
     public EnemyBringer bringer;
+    public SawCannonManager[] _sawCannonManagers;
+    public EndDoor endDoor;
+    public float endDoorDelay;
 }

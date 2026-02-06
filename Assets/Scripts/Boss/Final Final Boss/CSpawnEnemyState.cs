@@ -47,6 +47,8 @@ public class CSpawnEnemyState : State
         }
         _cientist.anim.SetBool("ButtonActive", true);
 
+        _data.vulnerableTime = 90;
+
         fsm.ChangeState(_cientist.GetNextState());
     }
 

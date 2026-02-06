@@ -27,6 +27,8 @@ public class Cientist : MonoBehaviour
         _fsm.AddState(CientistStates.Run, new CRunState(this, _data));
 
         _fsm.ChangeState(_stateList[0]);
+
+        _data.ff.ActivateForceField();
     }
 
     private void GetDataContents()
@@ -40,6 +42,12 @@ public class Cientist : MonoBehaviour
     public CientistStates GetNextState()
     {
         _stateListCounter++;
+        return _stateList[_stateListCounter];
+    }
+
+    public CientistStates GetLastAttackState()
+    {
+        _stateListCounter --;
         return _stateList[_stateListCounter];
     }
 

@@ -33,12 +33,12 @@ public class CientistForceField : MonoBehaviour
     public void DeactivateForceField()
     {
         _ffActive = false;
-        _anim.SetBool("ForceFieldActive", false);
+        _anim.SetBool("ForceFieldActive", true);
     }
 
     private IEnumerator Activate()
     {
-        _anim.SetBool("ForceFieldActive", true);
+        _anim.SetBool("ForceFieldActive", false);
         _ffActive = true;
 
         _forceFieldCollider.enabled = true;

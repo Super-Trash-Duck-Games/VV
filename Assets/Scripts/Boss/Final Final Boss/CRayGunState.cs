@@ -32,11 +32,17 @@ public class CRayGunState : State
 
 
         if (_cientist.transform.position.x > _data.rightMost.position.x)
+        {
+            _data._sawCannonManagers[1].ShootSequence();
             _rayCannon.Attack(true);
+        }
         else if (_cientist.transform.position.x < _data.leftMost.position.x)
+        {
+            _data._sawCannonManagers[2].ShootSequence();
             _rayCannon.Attack(false);
+        }
 
-        _data.ff.ActivateForceField();
+        //_data.ff.ActivateForceField();
 
         _data.rayCannon.AttackFinished += OnAttackFinished;
 
@@ -45,7 +51,7 @@ public class CRayGunState : State
     public override void OnExit()
     {
         _data.rayCannon.AttackFinished -= OnAttackFinished;
-        _data.ff.DeactivateForceField();
+        //_data.ff.DeactivateForceField();
 
     }
 

@@ -20,10 +20,14 @@ public class CVulnerableState : State
         _cientific._currentState = CientistStates.Vulnerable;
 
         _vulnerableTime = _data.vulnerableTime;
+
+
+        _data.ff.DeactivateForceField();
     }
 
     public override void OnExit()
     {
+        _data.ff.ActivateForceField();
     }
 
     public override void OnFixedUpdate()
@@ -34,7 +38,8 @@ public class CVulnerableState : State
     {
         if (collision.gameObject.layer == 7)
         {
-            _vulnerableTime = 0;
+            //_vulnerableTime = 0;
+            fsm.ChangeState(_cientific.GetNextState());
             _data.lives--;
             _cientific.anim.SetTrigger("GetHit");
         }
@@ -44,6 +49,6 @@ public class CVulnerableState : State
     {
         _vulnerableTime -= Time.deltaTime;
         if (_vulnerableTime < 0)
-            fsm.ChangeState(_cientific.GetNextState());
+            fsm.ChangeState(_cientific.GetLastAttackState());
     }
 }

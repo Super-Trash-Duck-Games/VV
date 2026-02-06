@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+
 
 public class Kumkum : Entity
 {
@@ -21,6 +23,8 @@ public class Kumkum : Entity
     [SerializeField] private Collider2D _stompCollider;
     [SerializeField] private LayerMask _ceilingLM;
     public Collider2D normalCollider, slimeCollider;
+
+    [SerializeField] private float _restartDelay;
 
 
     protected override void MVC()
@@ -87,6 +91,15 @@ public class Kumkum : Entity
         {
             transform.GetChild(i).gameObject.layer = 0;
         }
+
+        StartCoroutine(Restart());
+    }
+
+    private IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(_restartDelay);
+        string name = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(name);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
