@@ -117,7 +117,10 @@ public class Kumkum : Entity
     private void OnParticleCollision(GameObject other)
     {
         if (other.gameObject.layer == 7)
+        {
+            Debug.Log("Fuckititty");
             Death();
+        }
     }
 
     protected override void OnDrawGizmos()

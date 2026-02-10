@@ -11,7 +11,7 @@ public class Cannon : MonoBehaviour
     [SerializeField] private BoxCollider2D _collider;
     void Start()
     {
-        _collider ??= GetComponent<BoxCollider2D>();
+        //_collider ??= GetComponent<BoxCollider2D>();
         _collider.enabled = false;
     }
 
