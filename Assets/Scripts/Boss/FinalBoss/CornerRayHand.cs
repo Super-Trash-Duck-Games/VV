@@ -1,8 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
-public class CornerRayHand : MonoBehaviour
+public class CornerRayHand : MonoBehaviour, IFinalBossAttack
 {
+    [field: SerializeField] public FinalBossAttacks attack { get ; set ; }
+    Action IFinalBossAttack.OnFinished { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [field: SerializeField] public bool primary { get ; set ; }
+
+    public Action OnFinished;
+
     [Header("Laser")]
     [SerializeField] private Kumkum _kk;
     [SerializeField] private float _pointSpeed;
@@ -10,14 +17,13 @@ public class CornerRayHand : MonoBehaviour
     [SerializeField] private BoxCollider2D _boxCollider;
     [SerializeField] private float _colliderDelay;
     [SerializeField] private float _shootTime;
-    private bool _activated;
+    [SerializeField] private float _colliderGrowthSpeed;
 
     [Header("Positioning")]
     [SerializeField] private Transform _positionMarker;
     [SerializeField] private float _positioningSpeed;
     [SerializeField] private float _shootDelay;
     [SerializeField] private Vector2 _oPos;
-
 
     void Start()
     {
@@ -27,13 +33,7 @@ public class CornerRayHand : MonoBehaviour
         _oPos = transform.position;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Activate();
-        }
-    }
+
 
     public void Activate()
     {
@@ -70,10 +70,10 @@ public class CornerRayHand : MonoBehaviour
 
         while (counter < _shootTime)
         {
+            _boxCollider.size = new Vector2(_boxCollider.size.x + _colliderGrowthSpeed * Time.deltaTime, _boxCollider.size.y );
             counter += Time.deltaTime;
             yield return null;
         }
-        _activated = false;
 
         _boxCollider.enabled = false;
         Deactivate();
@@ -92,5 +92,12 @@ public class CornerRayHand : MonoBehaviour
             transform.position += Vector3.up * Time.deltaTime * _positioningSpeed;
             yield return null;
         }
+
+        Finished();
+    }
+
+    public void Finished()
+    {
+        if (primary) OnFinished?.Invoke();
     }
 }
