@@ -5,9 +5,7 @@ using System;
 public class FistSlam : MonoBehaviour, IFinalBossAttack
 {
     [field: SerializeField] public FinalBossAttacks attack { get; set; }
-    [field: SerializeField] public bool primary { get ; set ; }
-    public Action OnFinished { get; set; }
-
+    [field: SerializeField] public FinalBossAttackManager manager { get; set; }
 
     [SerializeField] private Transform _left, _right;
     [SerializeField] private float _speed;
@@ -18,6 +16,11 @@ public class FistSlam : MonoBehaviour, IFinalBossAttack
 
     void Start()
     {
+        if (manager == null)
+
+            manager = FindFirstObjectByType<FinalBossAttackManager>();
+        manager.OnAttack += OnAttackCall;
+
         _oPos = transform.position;
 
         if (_kk == null) _kk = FindFirstObjectByType<Kumkum>();
@@ -69,13 +72,15 @@ public class FistSlam : MonoBehaviour, IFinalBossAttack
             transform.position = Vector2.Lerp(transform.position, _oPos, _speed * Time.deltaTime);
             yield return null;
         }
+        manager.UnsubscribeAttack();
 
-        OnFinished?.Invoke();
 
     }
 
-    public void Finished()
+    public void OnAttackCall(FinalBossAttacks currentAttack)
     {
-        if (primary) OnFinished?.Invoke();
+        if (currentAttack != attack) return;
+        manager.SubscribeAttack();
+        Activate();
     }
 }

@@ -5,10 +5,9 @@ using System;
 public class CornerRayHand : MonoBehaviour, IFinalBossAttack
 {
     [field: SerializeField] public FinalBossAttacks attack { get ; set ; }
-    Action IFinalBossAttack.OnFinished { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    [field: SerializeField] public bool primary { get ; set ; }
 
     public Action OnFinished;
+    [field: SerializeField] public FinalBossAttackManager manager {get; set;}
 
     [Header("Laser")]
     [SerializeField] private Kumkum _kk;
@@ -27,6 +26,12 @@ public class CornerRayHand : MonoBehaviour, IFinalBossAttack
 
     void Start()
     {
+        if (manager == null)
+
+            manager = FindFirstObjectByType<FinalBossAttackManager>();
+
+        manager.OnAttack += OnAttackCall;
+
         if (_kk == null) _kk = FindFirstObjectByType<Kumkum>();
         if (_cannon == null) _cannon = transform.GetComponentInChildren<Cannon>();
         _boxCollider.enabled = false;
@@ -93,11 +98,12 @@ public class CornerRayHand : MonoBehaviour, IFinalBossAttack
             yield return null;
         }
 
-        Finished();
+        manager.UnsubscribeAttack();
     }
-
-    public void Finished()
+    public void OnAttackCall(FinalBossAttacks currentAttack)
     {
-        if (primary) OnFinished?.Invoke();
+        if (currentAttack != attack) return;
+        manager.SubscribeAttack();
+        Activate();
     }
 }
