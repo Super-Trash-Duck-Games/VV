@@ -44,7 +44,7 @@ public class AIEnemy : MonoBehaviour
 
     protected virtual void OnStart()
     {
-        if (waypoints == null)
+        if (waypoints.Count == 0)
             SetWaypoints();
         SetupComponents();
         SetupFSM();
