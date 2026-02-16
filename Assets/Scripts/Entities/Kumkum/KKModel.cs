@@ -82,6 +82,8 @@ public class KKModel : Model
     public void WallJump()
     {
         if (!_walled) return;
+        if (_kumKum.Grounded) return;
+        Debug.Log("Fuckititty");
 
         if (_kumKum.transform.localScale.x > 0)
             _rb2d.AddForce(_kumKum.transform.up * _package.wallJumpForce.y + Vector3.left * _package.wallJumpForce.x, ForceMode2D.Impulse);

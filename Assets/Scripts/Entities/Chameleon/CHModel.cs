@@ -33,13 +33,17 @@ public class CHModel : Model
     {
         if (!_grappled) return;
         _chameleon.UnGrapple();
-        _rb2d.AddForce(Vector2.up * _chp.ungrappleJumpForce, ForceMode2D.Impulse);
+        if (_chameleon.fullyGrappled)
+        {
+            _rb2d.AddForce(Vector2.up * _chp.ungrappleJumpForce, ForceMode2D.Impulse);
+            _chameleon.fullyGrappled = false;
+        }
     }
 
     public void AdjustGrappleLenght(float y)
     {
         if (_chameleon.currentGrapplePoint == null) return;
-       if (y != 0)
-           _chameleon.spring.distance += _chp.adjustDistanceRate * Time.deltaTime * -y;
+        if (y != 0)
+            _chameleon.spring.distance += _chp.adjustDistanceRate * Time.deltaTime * -y;
     }
 }

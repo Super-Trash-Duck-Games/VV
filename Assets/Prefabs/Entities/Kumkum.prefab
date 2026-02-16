@@ -352,8 +352,8 @@ MonoBehaviour:
   _ceilingLM:
     serializedVersion: 2
     m_Bits: 1024
-  normalCollider: {fileID: 0}
-  slimeCollider: {fileID: 0}
+  normalCollider: {fileID: 4116595191274498421}
+  slimeCollider: {fileID: 5154028602932647198}
   _restartDelay: 2
 --- !u!114 &2703508515432812661
 MonoBehaviour:

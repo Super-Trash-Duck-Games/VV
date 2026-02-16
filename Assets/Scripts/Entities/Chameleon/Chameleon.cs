@@ -92,6 +92,8 @@ public class Chameleon : Entity
         _renderLine = StartCoroutine(LineRender());
     }
 
+    public bool fullyGrappled;
+
     private IEnumerator LineRender()
     {
         float dist = Vector2.Distance(_lrStartPoint.transform.position, currentGrapplePoint.transform.position);
@@ -106,7 +108,7 @@ public class Chameleon : Entity
             lenght += Time.deltaTime * CHPackage.tongueExtensionSpeed;
             yield return null;
         }
-
+        fullyGrappled = true;
         while (currentGrapplePoint != null)
         {
             _lr.SetPosition(0, _lrStartPoint.transform.position);
@@ -131,5 +133,6 @@ public class Chameleon : Entity
             StopCoroutine(_renderLine);
             _renderLine = null;
         }
+        //fullyGrappled = false;
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c32583b2522420c4fa8b1da21406af91
+guid: 614f93c9699c1a54aa50a42fd33e0f49
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,177 +97,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kumkum_Jump_0
+      name: Kumkum_Eat_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 13
         y: 0
-        width: 32
+        width: 21
         height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.3809524, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0239779442332e4fa708c7555960560
-      internalID: 1125184504
+      spriteID: 7cdf80afb3ddd9749b03778fb5851c0d
+      internalID: -1488151266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kumkum_Jump_1
+      name: Kumkum_Eat_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 90
         y: 0
-        width: 32
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 21
+        height: 29
+      alignment: 9
+      pivot: {x: 0.47619048, y: -0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60a35a82eea340747b28ec670259d791
-      internalID: 1146884107
+      spriteID: c97c761b73653534c950645787309465
+      internalID: 1510598623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kumkum_Jump_2
+      name: Kumkum_Eat_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 167
         y: 0
-        width: 32
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 22
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: -0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ab40d2f394bc6f4e87ee531630004e5
-      internalID: -114781128
+      spriteID: ee0750b134dc28b468945c0de3ee1f7c
+      internalID: -1847809323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kumkum_Jump_3
+      name: Kumkum_Eat_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 245
         y: 0
-        width: 32
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 30
+        height: 25
+      alignment: 9
+      pivot: {x: 0.40000004, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e97b069ffedffe4439b2488ac74fb9f6
-      internalID: -1066648462
+      spriteID: ce5bbc97e5c2dfc4686415c636860381
+      internalID: -924392721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kumkum_Jump_4
+      name: Kumkum_Eat_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 320
         y: 0
-        width: 32
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 66
+        height: 43
+      alignment: 9
+      pivot: {x: 0.3030303, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f25975a23be340a4c84254790bc54216
-      internalID: 783889500
+      spriteID: 38797d9ff6d08f64a8b02801cb3f8030
+      internalID: -808131066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kumkum_Jump_5
+      name: Kumkum_Eat_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 407
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 39
+      alignment: 9
+      pivot: {x: 0.18461539, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7460e6d3a5d29540894c157dcccb8ee
-      internalID: 1742407156
+      spriteID: c065ac2d8fb72434b96c6bf0c4f1acaf
+      internalID: -1242151281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kumkum_Jump_6
+      name: Kumkum_Eat_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 484
         y: 0
-        width: 32
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 83
+        height: 41
+      alignment: 9
+      pivot: {x: 0.13253012, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 121cb1a77b36351419ffcc51905cf496
-      internalID: -378852114
+      spriteID: cb6f7c1a86e87054f8884f4e25c801cf
+      internalID: -1392506483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kumkum_Jump_7
+      name: Kumkum_Eat_7
       rect:
         serializedVersion: 2
-        x: 224
+        x: 568
         y: 0
-        width: 32
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 44
+        height: 12
+      alignment: 9
+      pivot: {x: 0.18181819, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2af37785ffeb4b64b9fd35f1275d3142
-      internalID: -2044216544
+      spriteID: 7bc72137265fd514e8ace18c5b28e985
+      internalID: -561323798
       vertices: []
       indices: 
       edges: []
@@ -276,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc08a42b32b2c0344b0356d356c9322a
+    spriteID: c7ca167a06f89ed45aca4fad1b6bb1f4
     internalID: 0
     vertices: []
     indices: 
@@ -286,16 +286,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":38.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":1,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Kumkum_Jump_0: 1125184504
-      Kumkum_Jump_1: 1146884107
-      Kumkum_Jump_2: -114781128
-      Kumkum_Jump_3: -1066648462
-      Kumkum_Jump_4: 783889500
-      Kumkum_Jump_5: 1742407156
-      Kumkum_Jump_6: -378852114
-      Kumkum_Jump_7: -2044216544
+      Kumkum_Eat_0: -1488151266
+      Kumkum_Eat_1: 1510598623
+      Kumkum_Eat_2: -1847809323
+      Kumkum_Eat_3: -924392721
+      Kumkum_Eat_4: -808131066
+      Kumkum_Eat_5: -1242151281
+      Kumkum_Eat_6: -1392506483
+      Kumkum_Eat_7: -561323798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

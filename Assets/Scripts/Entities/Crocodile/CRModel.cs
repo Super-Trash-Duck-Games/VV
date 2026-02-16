@@ -16,7 +16,18 @@ public class CRModel : Model
 
     public override void Special()
     {
-        if (_bullet == null)
-            _bullet = _crocodile.Shoot();
+        if (_bullet != null) return;
+        _bullet = _crocodile.Shoot();
+        _rb2d.linearVelocity = Vector2.zero;
+    }
+
+    public override void Move(float x)
+    {
+        if (_bullet != null)
+        {
+            base.Move(0);
+            return;
+        }
+        base.Move(x);
     }
 }
