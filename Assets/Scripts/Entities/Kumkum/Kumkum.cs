@@ -24,7 +24,6 @@ public class Kumkum : Entity
     [SerializeField] private LayerMask _ceilingLM;
     public Collider2D normalCollider, slimeCollider;
 
-    [SerializeField] private float _restartDelay;
 
 
     protected override void MVC()
@@ -80,8 +79,9 @@ public class Kumkum : Entity
             return false;
     }
 
-    public void Death()
+    protected override void Death()
     {
+        base.Death();
         _kkView.Death();
         _kkModel.Death();
         _rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
@@ -92,36 +92,35 @@ public class Kumkum : Entity
             transform.GetChild(i).gameObject.layer = 0;
         }
 
-        StartCoroutine(Restart());
-    }
+    }  
 
-    private IEnumerator Restart()
-    {
-        yield return new WaitForSeconds(_restartDelay);
-        string name = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(name);
-    }
+    //private IEnumerator Restart()
+    //{
+    //    yield return new WaitForSeconds(_restartDelay);
+    //    string name = SceneManager.GetActiveScene().name;
+    //    SceneManager.LoadScene(name);
+    //}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 7)
-            Death();
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.layer == 7)
+    //        Death();
+    //}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 7)
-            Death();
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.layer == 7)
+    //        Death();
+    //}
 
-    private void OnParticleCollision(GameObject other)
-    {
-        if (other.gameObject.layer == 7)
-        {
-            Debug.Log("Fuckititty");
-            Death();
-        }
-    }
+    //private void OnParticleCollision(GameObject other)
+    //{
+    //    if (other.gameObject.layer == 7)
+    //    {
+    //        Debug.Log("Fuckititty");
+    //        Death();
+    //    }
+    //}
 
     protected override void OnDrawGizmos()
     {

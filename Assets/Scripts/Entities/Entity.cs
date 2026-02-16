@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] protected LayerMask _groundLM;
     [SerializeField] protected float _groundDetectionLenght = .2f;
     public bool mirrored;
+    [SerializeField] private float _restartDelay;
 
     protected virtual void Start()
     {
@@ -99,6 +101,40 @@ public abstract class Entity : MonoBehaviour
         yield return new WaitForSeconds(morphTime);
         gameObject.SetActive(false);
         kumkum.gameObject.SetActive(true);
+    }
+
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+            Death();
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+            Death();
+    }
+
+    protected virtual void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.layer == 7)
+        {
+            Debug.Log("Fuckititty");
+            Death();
+        }
+    }
+
+    protected virtual void Death()
+    {
+
+        StartCoroutine(Restart());
+    }
+
+    protected virtual IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(_restartDelay);
+        string name = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(name);
     }
 
     protected virtual void OnDrawGizmos()
