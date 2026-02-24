@@ -23,12 +23,36 @@ public class ZModel : Model
         _zap.OnGrounded = OnGrounded;
     }
 
+    public override void Move(float x)
+    {
+        Vector2 moveDir;
+
+        if (x > 0)
+            moveDir = Vector2.right;
+        else
+            moveDir = Vector2.left;
+        moveDir.y = 0;
+
+        if (x != 0)
+        {
+            if (_entity.Grounded)
+                _rb2d.AddForce(Vector2.right * _ep.speed * 100 * x * Time.deltaTime * _zap.electrifiedSpeed);
+            else
+                _rb2d.AddForce(Vector2.right * _ep.airControl * 100 * x * Time.deltaTime * _zap.electrifiedSpeed);
+        }
+        else
+            Decelerate();
+
+        OnMove?.Invoke(x);
+    }
+
     public override void Special()
     {
         _ep.speed = _electrifiedSpeed;
         OnElectrify?.Invoke(true);
         _ps.Play();
         _zone.SetActive(true);
+        _zap.electrified = true;
     }
 
     public override void SpecialRelease()
@@ -36,5 +60,6 @@ public class ZModel : Model
         _ep.speed = _oSpeed;
         OnElectrify?.Invoke(false);
         _zone.SetActive(false);
+        _zap.electrified = false;
     }
 }

@@ -91,16 +91,17 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    public virtual void MorphBack(Entity kumkum)
+    public virtual void MorphBack(Entity kumkum, Entity currentMorph)
     {
-        StartCoroutine(ActivateKumkum(_view.MorphBack(), kumkum));
+        StartCoroutine(ActivateKumkum(_view.MorphBack(), kumkum, currentMorph));
     }
 
-    private IEnumerator ActivateKumkum(float morphTime, Entity kumkum)
+    private IEnumerator ActivateKumkum(float morphTime, Entity kumkum, Entity currentMorph)
     {
         yield return new WaitForSeconds(morphTime);
         gameObject.SetActive(false);
         kumkum.gameObject.SetActive(true);
+        kumkum.transform.position = currentMorph.transform.position;
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)

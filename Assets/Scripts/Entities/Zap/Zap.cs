@@ -12,6 +12,8 @@ public class Zap : Entity
     [SerializeField] private ParticleSystem _ps;
     [SerializeField] private GameObject _zone;
     [SerializeField] private float _electrifiedSpeed;
+    public bool electrified;
+    public float electrifiedSpeed;
 
     protected override void MVC()
     {

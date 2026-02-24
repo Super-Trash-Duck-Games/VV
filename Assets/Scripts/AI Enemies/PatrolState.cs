@@ -36,8 +36,9 @@ public class PatrolState : State
         _aie.OnPlayerSeen += OnPlayerSeen;
         _aie.currentState = AIEnemiesStates.Patrol;
         _aie.view.Move(true);
-        _aie.Mirror(_mirrorOnPatrol);
+        _aie.Mirror(_aie.transform.position.x > _aie.waypoints[_currentWPIndex].x);
         _aie.view.SkipMorph();
+
     }
 
     public override void OnExit()

@@ -22,14 +22,15 @@ public class MorphManager : MonoBehaviour
         _player = _entities[0];
         foreach (var entity in _entities)
         {
-            var ent = Instantiate(entity);
-            _entitiesByType.Add(entity.type, ent);
-            ent.gameObject.SetActive(false);
+            //var ent = Instantiate(entity);
+            _entitiesByType.Add(entity.type, entity);
+            //entity.gameObject.SetActive(false);
         }
     }
 
     private void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Keypad1))
             Morph(EntityTypes.Kumkum);
         if (Input.GetKeyDown(KeyCode.Keypad2))
@@ -41,22 +42,25 @@ public class MorphManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad5))
             Morph(EntityTypes.Crocodile);
 
-        if (Input.GetKeyDown(KeyCode.I)) MorphBack();
+#endif
+        if (Input.GetButtonDown("MorphBack")) MorphBack();
     }
 
     public void Morph(EntityTypes entity)
     {
         _currentMorph = _entitiesByType[entity];
-        _currentMorph.gameObject.SetActive(true);
+        _entitiesByType[entity].gameObject.SetActive(true);
         _currentMorph.transform.position = _player.transform.position;
         _player.gameObject.SetActive(false);
     }
 
     private void MorphBack()
     {
+        if (_currentMorph == null) return;
         _player.transform.position = _currentMorph.transform.position;
         //_player.gameObject.SetActive(true);
-        _currentMorph.MorphBack(_player);
+        _currentMorph.MorphBack(_player, _currentMorph);
+        _currentMorph = null;
     }
 
 }

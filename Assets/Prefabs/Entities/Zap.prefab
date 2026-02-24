@@ -4143,7 +4143,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6309934, g: 0.19339621, b: 1, a: 1}
+      maxColor: {r: 0.0039215684, g: 0.7539988, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4928,7 +4928,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4994,6 +4994,7 @@ GameObject:
   - component: {fileID: 2599019500323609891}
   - component: {fileID: 3793253083398823158}
   - component: {fileID: 2418926876902777173}
+  - component: {fileID: 2060984274180286337}
   m_Layer: 0
   m_Name: Zap
   m_TagString: Untagged
@@ -5010,7 +5011,7 @@ Transform:
   m_GameObject: {fileID: 2769177201204272467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.736071, y: 2.0050197, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5040,9 +5041,12 @@ MonoBehaviour:
     m_Bits: 64
   _groundDetectionLenght: 0.2
   mirrored: 0
+  _restartDelay: 0
   _ps: {fileID: 8272769106191917417}
   _zone: {fileID: 305282035842323427}
   _electrifiedSpeed: 7
+  electrified: 0
+  electrifiedSpeed: 1.9
 --- !u!114 &3793253083398823158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5082,6 +5086,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &2060984274180286337
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769177201204272467}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.04990399, y: 0.90659094}
+  m_Size: {x: 1.098849, y: 1.8650041}
+  m_Direction: 0
 --- !u!1 &6561439884757440392
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,7 +5244,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6561439884757440392}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

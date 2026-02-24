@@ -393,6 +393,7 @@ MonoBehaviour:
     m_Bits: 64
   _groundDetectionLenght: 0.2
   mirrored: 0
+  _restartDelay: 0
   hitboxes:
   - {fileID: 5419863611522508521}
   - {fileID: 4007222091114800369}

@@ -4016,7 +4016,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6309934, g: 0.19339621, b: 1, a: 1}
+      maxColor: {r: 0, g: 0.86945343, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5143,7 +5143,7 @@ MonoBehaviour:
   entityType: 3
   currentState: 0
   _patrolAreaDistance: 0
-  _waypoints: []
+  waypoints: []
   _movementPackage: {fileID: 533554406465359028, guid: 5c875a4a61e7bfc4fbcb74dc2cd8f5c1, type: 3}
   _waitTime: 1
   _dizzyTime: 4
