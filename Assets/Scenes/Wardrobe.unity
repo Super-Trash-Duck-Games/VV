@@ -404,6 +404,7 @@ MonoBehaviour:
   lr: {fileID: 0}
   hangPoint: {fileID: 0}
   sj: {fileID: 0}
+  pap: {fileID: 1509593133}
 --- !u!120 &159496318
 LineRenderer:
   serializedVersion: 2
@@ -900,6 +901,7 @@ MonoBehaviour:
   lr: {fileID: 0}
   hangPoint: {fileID: 0}
   sj: {fileID: 0}
+  pap: {fileID: 1509593133}
 --- !u!120 &707909108
 LineRenderer:
   serializedVersion: 2
@@ -1207,6 +1209,7 @@ MonoBehaviour:
   lr: {fileID: 0}
   hangPoint: {fileID: 0}
   sj: {fileID: 0}
+  pap: {fileID: 1509593133}
 --- !u!120 &814217313
 LineRenderer:
   serializedVersion: 2
@@ -2988,6 +2991,7 @@ MonoBehaviour:
   lr: {fileID: 0}
   hangPoint: {fileID: 0}
   sj: {fileID: 0}
+  pap: {fileID: 1509593133}
 --- !u!120 &1258573090
 LineRenderer:
   serializedVersion: 2
@@ -3295,6 +3299,7 @@ MonoBehaviour:
   lr: {fileID: 0}
   hangPoint: {fileID: 0}
   sj: {fileID: 0}
+  pap: {fileID: 0}
 --- !u!120 &1354940182
 LineRenderer:
   serializedVersion: 2
@@ -3436,6 +3441,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 707909103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1509593131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509593132}
+  - component: {fileID: 1509593133}
+  m_Layer: 0
+  m_Name: PersistentAccesoryPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1509593132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509593131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509593133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509593131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e61518a1fbf5a14f892b7fcbdd01c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PersistentAccesoryPlacer
 --- !u!1 &1610894840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,6 +3682,7 @@ MonoBehaviour:
   lr: {fileID: 0}
   hangPoint: {fileID: 0}
   sj: {fileID: 0}
+  pap: {fileID: 1509593133}
 --- !u!120 &1610894847
 LineRenderer:
   serializedVersion: 2
@@ -4077,6 +4127,7 @@ MonoBehaviour:
   lr: {fileID: 0}
   hangPoint: {fileID: 0}
   sj: {fileID: 0}
+  pap: {fileID: 1509593133}
 --- !u!120 &1867394410
 LineRenderer:
   serializedVersion: 2
@@ -4289,3 +4340,4 @@ SceneRoots:
   - {fileID: 4410777455234778567}
   - {fileID: 818559716}
   - {fileID: 138433219}
+  - {fileID: 1509593132}

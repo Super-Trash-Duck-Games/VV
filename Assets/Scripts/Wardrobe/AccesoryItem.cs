@@ -7,6 +7,7 @@ public class AccesoryItem : MonoBehaviour
     public LineRenderer lr;
     public Transform hangPoint;
     public SpringJoint2D sj;
+    public PersistentAccesoryPlacer pap;
     void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -15,6 +16,7 @@ public class AccesoryItem : MonoBehaviour
         sj = GetComponent<SpringJoint2D>();
         sj.connectedAnchor = hangPoint.position;
 
+        if (pap == null) pap = FindFirstObjectByType<PersistentAccesoryPlacer>();
     }
 
     private void Update()
@@ -29,6 +31,7 @@ public class AccesoryItem : MonoBehaviour
         if (collision.gameObject.layer == 3)
         {
             kk.WearHat(accesorieType);
+            pap.AccesoryChanged(accesorieType);
         }
     }
 }

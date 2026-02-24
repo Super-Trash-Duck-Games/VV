@@ -13,6 +13,26 @@ public class AccesoriesDisplay : MonoBehaviour
             _anim = anim;
         else
             _anim = gameObject.AddComponent<Animator>();
+
+        EventManager.Subscribe("Accesory", OnAccesory);
+    }
+
+    private void OnEnable()
+    {
+        var placer = FindFirstObjectByType<PersistentAccesoryPlacer>();
+        if (placer == null) return;
+        if (placer.usingAHat)
+            WearHat(placer.current);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.UnSubsctribe("Accesory", OnAccesory);
+    }
+
+    private void OnAccesory(params object[] parameters)
+    {
+        WearHat((Accesories)parameters[0]);
     }
 
     public void SetupView(View view)
