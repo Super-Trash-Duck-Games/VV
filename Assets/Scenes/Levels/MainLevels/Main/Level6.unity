@@ -1077,7 +1077,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5250546553411917211, guid: dbe2544fea7f2e64db5aec59ecb25094, type: 3}
       propertyPath: nextScene
-      value: GarGarTuto
+      value: Level7
       objectReference: {fileID: 0}
     - target: {fileID: 6161365848040603128, guid: dbe2544fea7f2e64db5aec59ecb25094, type: 3}
       propertyPath: m_Name

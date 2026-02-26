@@ -564,7 +564,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5250546553411917211, guid: dbe2544fea7f2e64db5aec59ecb25094, type: 3}
       propertyPath: nextScene
-      value: GarGarTuto
+      value: ZapTuto
       objectReference: {fileID: 0}
     - target: {fileID: 6161365848040603128, guid: dbe2544fea7f2e64db5aec59ecb25094, type: 3}
       propertyPath: m_Name
@@ -12445,11 +12445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3565479189092989916, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.47
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: 3565479189092989916, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.81
+      value: -16.56
       objectReference: {fileID: 0}
     - target: {fileID: 4434500107216078979, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
       propertyPath: m_LocalPosition.x
