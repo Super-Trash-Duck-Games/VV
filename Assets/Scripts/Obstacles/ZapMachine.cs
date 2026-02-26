@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class ZapMachine : MonoBehaviour
     [SerializeField] private float _doorLiftSpeed;
     private float _oDoorYPos;
     [SerializeField] private float _doorMaxHeight;
+    public Action<bool> doorOpen;
     void Start()
     {
         if (_anim == null) _anim = GetComponent<Animator>();
@@ -55,13 +57,16 @@ public class ZapMachine : MonoBehaviour
     private IEnumerator LiftDoor(Zap zap)
     {
         _anim.SetBool("Red", true);
+        doorOpen?.Invoke(true);
         while (_onContact && zap.electrified)
         {
             if (_door.transform.position.y < _doorMaxHeight)
-                _door.transform.position += Vector3.up * Time.deltaTime * _doorLiftSpeed;
+                _door.transform.position += Vector3.up * Time.deltaTime * _doorLiftSpeed * 5;
             yield return null;
 
         }
+
+
         _anim.SetBool("Red", false);
         while (_door.transform.position.y > _oDoorYPos)
         {
@@ -70,5 +75,6 @@ public class ZapMachine : MonoBehaviour
         }
         if (_onContact)
             StartCoroutine(WaitForElectricity(zap));
+        doorOpen?.Invoke(false);
     }
 }
