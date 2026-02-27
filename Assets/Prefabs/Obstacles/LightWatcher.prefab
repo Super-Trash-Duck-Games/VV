@@ -277,8 +277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LampWatcher
   _eyePivot: {fileID: 3839682361301614356}
   _fov: {fileID: 6774739934236405318}
-  _passiveFovColor: {r: 0.32156864, g: 0.47058827, b: 0.6039216, a: 0.38431373}
-  _agressiveFovColor: {r: 0.8396226, g: 0.27556956, b: 0.23366857, a: 0.38431373}
+  _passiveFovColor: {r: 0.32156864, g: 0.47058827, b: 0.6039216, a: 0.19215687}
+  _agressiveFovColor: {r: 0.8396226, g: 0.27556956, b: 0.23366857, a: 0.19215687}
   _followTime: 3
   _staticEye: {fileID: 8238491659919941507}
   _watchingEye: {fileID: 271709533084951041}
