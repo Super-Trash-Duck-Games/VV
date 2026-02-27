@@ -12286,6 +12286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EntityPack
       objectReference: {fileID: 0}
+    - target: {fileID: 3565479189092989916, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.63
+      objectReference: {fileID: 0}
     - target: {fileID: 4434500107216078979, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.803337

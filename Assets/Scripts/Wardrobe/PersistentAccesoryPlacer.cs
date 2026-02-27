@@ -11,7 +11,15 @@ public class PersistentAccesoryPlacer : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        //SceneManager.sceneLoaded += TriggerAccesoryOnLevelStarted;
+        StartCoroutine(SubscribeOnDelay());
+    }
+
+    private IEnumerator SubscribeOnDelay()
+    {
+        yield return new WaitForSeconds(.5f);
         SceneManager.sceneLoaded += TriggerAccesoryOnLevelStarted;
+
     }
 
     void Start()
@@ -22,7 +30,8 @@ public class PersistentAccesoryPlacer : MonoBehaviour
     private IEnumerator CallOnDelay()
     {
         yield return new WaitForSeconds(.1f);
-        AccesoryChanged(current);
+        if (usingAHat)
+            AccesoryChanged(current);
     }
 
     private void TriggerAccesoryOnLevelStarted(Scene scene, LoadSceneMode mode)
@@ -33,7 +42,14 @@ public class PersistentAccesoryPlacer : MonoBehaviour
     public void AccesoryChanged(Accesories current)
     {
         this.current = current;
+        usingAHat = true;
         EventManager.Trigger("Accesory", current);
+    }
+
+    public void NoAccesory()
+    {
+        usingAHat = false;
+        EventManager.Trigger("NoAccesory");
     }
 
 

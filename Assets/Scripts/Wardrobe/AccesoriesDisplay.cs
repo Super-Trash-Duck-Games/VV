@@ -15,6 +15,7 @@ public class AccesoriesDisplay : MonoBehaviour
             _anim = gameObject.AddComponent<Animator>();
 
         EventManager.Subscribe("Accesory", OnAccesory);
+        EventManager.Subscribe("NoAccesory", NoAccesory);
     }
 
     private void OnEnable()
@@ -28,11 +29,21 @@ public class AccesoriesDisplay : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.UnSubsctribe("Accesory", OnAccesory);
+        EventManager.UnSubsctribe("NoAccesory", NoAccesory);
+
     }
 
     private void OnAccesory(params object[] parameters)
     {
         WearHat((Accesories)parameters[0]);
+    }
+
+    private void NoAccesory(params object[] parameters)
+    {
+        foreach (var acc in _accesories)
+        {
+            acc.sr.enabled = false;
+        }
     }
 
     public void SetupView(View view)

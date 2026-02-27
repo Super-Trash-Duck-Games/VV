@@ -1903,6 +1903,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: EntityPack
       objectReference: {fileID: 0}
+    - target: {fileID: 262946589684419636, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 911902968598198026, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984282031041030732, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398812272363268349, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294866462976756722, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4434500107216078979, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.803337
@@ -1943,8 +1963,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6185918473901418839, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
-      propertyPath: m_CollisionDetection
+    - target: {fileID: 5084410322612651924, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365299375150897008, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444615994569353286, guid: a43898065e825834a9941aeea9a7bd06, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -7,10 +7,11 @@ public class DestructibleBox : MonoBehaviour
     [SerializeField] private ParticleSystem _ps;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 7)
-        {
-            Destroy();
-        }
+        if (collision.transform.parent.GetComponent<Kumkum>() == null)
+            if (collision.gameObject.layer == 7)
+            {
+                Destroy();
+            }
     }
 
     public void Destroy()

@@ -7,7 +7,8 @@ public class PortalDoor : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _arrow;
 
-    private Coroutine _onDoorway;
+    //private Coroutine _onDoorway;
+    private bool _onDoorway;
 
     void Start()
     {
@@ -21,13 +22,14 @@ public class PortalDoor : MonoBehaviour
         {
             _anim.SetTrigger("Open");
             _arrow.enabled = true;
-            _onDoorway = StartCoroutine(OnDoorway());
+            StartCoroutine(OnDoorway());
         }
     }
 
     private IEnumerator OnDoorway()
     {
-        while (true)
+        _onDoorway = true;
+        while (_onDoorway)
         {
             if (Input.GetAxis("Vertical") > 0)
             {
@@ -43,7 +45,7 @@ public class PortalDoor : MonoBehaviour
         {
             _anim.SetTrigger("Close");
             _arrow.enabled = false;
-            StopCoroutine(_onDoorway);
+            _onDoorway = false;
         }
     }
 }

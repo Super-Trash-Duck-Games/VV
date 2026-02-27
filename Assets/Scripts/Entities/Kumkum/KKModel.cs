@@ -44,6 +44,7 @@ public class KKModel : Model
     {
         if (_dead) return;
         if (_biting) return;
+        if (!_kumKum.entryDone) return;
         base.Move(x);
     }
 
@@ -100,6 +101,8 @@ public class KKModel : Model
         if (_dead) return;
         if (_biting) return;
         if (_crouching) return;
+        if (!_kumKum.entryDone) return;
+
         base.Jump();
     }
 
