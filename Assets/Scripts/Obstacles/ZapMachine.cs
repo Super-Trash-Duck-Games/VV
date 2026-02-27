@@ -8,7 +8,7 @@ public class ZapMachine : MonoBehaviour
     [SerializeField] private bool _onContact;
     [SerializeField] private Transform _door;
     [SerializeField] private float _doorLiftSpeed;
-    private float _oDoorYPos;
+    [SerializeField] private float _oDoorYPos;
     [SerializeField] private float _doorMaxHeight;
     public Action<bool> doorOpen;
     void Start()
@@ -66,11 +66,12 @@ public class ZapMachine : MonoBehaviour
 
         }
 
-
         _anim.SetBool("Red", false);
+
         while (_door.transform.position.y > _oDoorYPos)
         {
             _door.transform.position -= Vector3.up * Time.deltaTime * _doorLiftSpeed;
+            Debug.Log("Fuckititty");
             yield return null;
         }
         if (_onContact)
