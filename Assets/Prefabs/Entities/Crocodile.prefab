@@ -58,6 +58,8 @@ MonoBehaviour:
   _groundDetectionLenght: 0.2
   mirrored: 0
   _restartDelay: 0
+  morphing: 0
+  _eventListener: {fileID: 7251940669520370837}
   _shootPoint: {fileID: 2091581360867962073}
   _bulletPrefab: {fileID: 7607714373923994013, guid: 670676c90da9bbb4b831d60e06d7891f, type: 3}
 --- !u!114 &4635190540564886903
@@ -142,6 +144,7 @@ GameObject:
   - component: {fileID: 1099179396921564724}
   - component: {fileID: 7100038619407290884}
   - component: {fileID: 4511458220423987968}
+  - component: {fileID: 7251940669520370837}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -281,6 +284,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.13691378, y: 0.83177954}
   m_Size: {x: 1.134923, y: 1.6654676}
   m_Direction: 0
+--- !u!114 &7251940669520370837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190381182488007107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7761cd509a50e704bb0a2817b7b47274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventListener
 --- !u!1001 &2148599933426389873
 PrefabInstance:
   m_ObjectHideFlags: 0

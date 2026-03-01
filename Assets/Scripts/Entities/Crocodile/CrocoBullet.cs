@@ -1,9 +1,6 @@
 using System.Collections;
-using Unity.Mathematics;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class CrocoBullet : MonoBehaviour
 {

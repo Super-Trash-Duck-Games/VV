@@ -28,11 +28,28 @@ public abstract class Entity : MonoBehaviour
     public bool mirrored;
     [SerializeField] private float _restartDelay;
 
+    public bool morphing;
+    public AnimationEventListener _eventListener;
+
     protected virtual void Start()
     {
         _ep = _chPackageGO.GetComponent<EntityPackage>();
         GetComponents();
         MVC();
+
+        if (_eventListener == null)
+            _eventListener = GetComponentInChildren<AnimationEventListener>();
+        _eventListener.OnMorphDone += Unfreeze;
+    }
+
+    private void OnDestroy()
+    {
+        _eventListener.OnMorphDone -= Unfreeze;
+    }
+
+    private void Unfreeze()
+    {
+        morphing = false;
     }
 
     protected virtual void MVC()

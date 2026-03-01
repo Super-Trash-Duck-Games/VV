@@ -23,12 +23,12 @@ public class Kumkum : Entity
     [SerializeField] private Collider2D _stompCollider;
     [SerializeField] private LayerMask _ceilingLM;
     public Collider2D normalCollider, slimeCollider;
-    private KumkumEntryAnimationCaller _kkEAC;
+    private AnimationEventListener _kkEAC;
     [HideInInspector] public bool entryDone = false;
     protected override void Start()
     {
         base.Start();
-        _kkEAC = GetComponentInChildren<KumkumEntryAnimationCaller>();
+        _kkEAC = GetComponentInChildren<AnimationEventListener>();
         _kkEAC.OnEntryDone += OnEntryComplete;
 
         _anim.Play("KumKum_Entry_Clip");
@@ -38,7 +38,7 @@ public class Kumkum : Entity
     {
         if( _kkEAC != null )
         _kkEAC.OnEntryDone -= OnEntryComplete;
-
+        _kkPM.friction = .4f;
     }
 
     private void OnEntryComplete()

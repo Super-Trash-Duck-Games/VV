@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 5948283652529264212}
   - component: {fileID: 2178296576546448157}
   - component: {fileID: 5393596901078773623}
+  - component: {fileID: 3225394484257611489}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -334,6 +335,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1591184, y: 1.104981}
   m_EdgeRadius: 0
+--- !u!114 &3225394484257611489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8008326064465136996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7761cd509a50e704bb0a2817b7b47274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventListener
 --- !u!1 &8986750533371954712
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +407,8 @@ MonoBehaviour:
   _groundDetectionLenght: 0.2
   mirrored: 0
   _restartDelay: 0.2
+  morphing: 0
+  _eventListener: {fileID: 3225394484257611489}
   hitboxes:
   - {fileID: 5419863611522508521}
   - {fileID: 4007222091114800369}

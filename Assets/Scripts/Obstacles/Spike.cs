@@ -6,7 +6,7 @@ public class Spike : MonoBehaviour, IHazard
     [SerializeField] private float _delay;
     [SerializeField] private float _openTime;
     [SerializeField] private Animator _anim;
-    [SerializeField] private BoxCollider2D _hurtCollider;
+    [SerializeField] private Collider2D _hurtCollider;
 
     void Start()
     {

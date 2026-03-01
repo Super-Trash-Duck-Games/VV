@@ -111,6 +111,8 @@ public class KKModel : Model
     {
         if (_dead) return;
         if (_biting) return;
+        if (_entity.morphing) return;
+
 
         if (!_entity.Grounded)
         {

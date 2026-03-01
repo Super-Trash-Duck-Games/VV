@@ -143,6 +143,8 @@ MonoBehaviour:
   _groundDetectionLenght: 0.2
   mirrored: 0
   _restartDelay: 0
+  morphing: 0
+  _eventListener: {fileID: 3579851028360368138}
   grapplePoints: []
   closestGrapplePoint: {fileID: 0}
   currentGrapplePoint: {fileID: 0}
@@ -363,6 +365,7 @@ GameObject:
   - component: {fileID: 5162607618168753615}
   - component: {fileID: 88745727198333536}
   - component: {fileID: 2708739588651373509}
+  - component: {fileID: 3579851028360368138}
   m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
@@ -511,6 +514,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5045519, y: 1.2032776}
   m_EdgeRadius: 0
+--- !u!114 &3579851028360368138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8922500659060931785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7761cd509a50e704bb0a2817b7b47274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventListener
 --- !u!1001 &5094357873871499907
 PrefabInstance:
   m_ObjectHideFlags: 0

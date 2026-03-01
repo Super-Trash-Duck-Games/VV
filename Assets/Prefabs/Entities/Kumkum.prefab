@@ -1176,6 +1176,8 @@ MonoBehaviour:
   _groundDetectionLenght: 0.2
   mirrored: 0
   _restartDelay: 2
+  morphing: 0
+  _eventListener: {fileID: 3937376365706839738}
   crouching: 0
   _wallCast: {x: 0.4, y: 0.37}
   _touchingWall: 0
@@ -1225,7 +1227,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &4116595191274498421
 CapsuleCollider2D:

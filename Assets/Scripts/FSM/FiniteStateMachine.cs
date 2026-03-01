@@ -41,6 +41,6 @@ public class FiniteStateMachine : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        _currentState.OnTriggerEnter(collision);
+        _currentState?.OnTriggerEnter(collision);
     }
 }

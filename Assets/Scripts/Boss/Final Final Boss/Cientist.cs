@@ -11,6 +11,7 @@ public class Cientist : MonoBehaviour
 
     [SerializeField] private CData _data;
     public Animator anim;
+    [SerializeField] private float _startDelay;
 
     private void Start()
     {
@@ -26,9 +27,16 @@ public class Cientist : MonoBehaviour
         _fsm.AddState(CientistStates.Vulnerable, new CVulnerableState(this, _data));
         _fsm.AddState(CientistStates.Run, new CRunState(this, _data));
 
+        StartCoroutine(StartOnDelay());
+        _data.ff.ActivateForceField();
+    }
+
+    private IEnumerator StartOnDelay()
+    {
+
+        yield return new WaitForSeconds(_startDelay);
         _fsm.ChangeState(_stateList[0]);
 
-        _data.ff.ActivateForceField();
     }
 
     private void GetDataContents()

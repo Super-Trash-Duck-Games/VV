@@ -33,7 +33,7 @@ public class GModel : Model
         GameObject hitbox = _hitboxes[0];
         if (direction.x != 0)
         {
-           hitbox = _hitboxes[0];
+            hitbox = _hitboxes[0];
         }
         else if (direction.y > 0)
         {
@@ -63,5 +63,7 @@ public class GModel : Model
         }
         hitbox.SetActive(false);
         _hit = null;
+        while (_rb2d.linearVelocity.y > 0) yield return null;
+        OnFall?.Invoke();
     }
 }

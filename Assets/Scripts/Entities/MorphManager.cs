@@ -52,6 +52,8 @@ public class MorphManager : MonoBehaviour
         _entitiesByType[entity].gameObject.SetActive(true);
         _currentMorph.transform.position = _player.transform.position;
         _player.gameObject.SetActive(false);
+
+        _entitiesByType[entity].morphing = true;
     }
 
     private void MorphBack()
@@ -61,6 +63,7 @@ public class MorphManager : MonoBehaviour
         //_player.gameObject.SetActive(true);
         _currentMorph.MorphBack(_player, _currentMorph);
         _currentMorph = null;
+
     }
 
 }

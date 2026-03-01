@@ -24,6 +24,8 @@ public class Model
 
     public virtual void Move(float x)
     {
+        if (_entity.morphing) return;
+
         Vector2 moveDir;
 
         if (x > 0)
@@ -53,6 +55,7 @@ public class Model
     public virtual void Jump()
     {
         if (!_entity.Grounded) return;
+        if (_entity.morphing) return;
 
         _jumping = true;
         _rb2d.AddForce(Vector2.up * _ep.jumpForce, ForceMode2D.Impulse);
