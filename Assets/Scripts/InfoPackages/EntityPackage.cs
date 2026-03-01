@@ -8,6 +8,7 @@ public class EntityPackage : MonoBehaviour
     public float speed;
     public float runSpeed;
     public float turnSpeed;
+    public float maxVelocity;
     //[Range(.1f, 10f)]
     //public float acceleration;
     [Range(.1f, 10f)]

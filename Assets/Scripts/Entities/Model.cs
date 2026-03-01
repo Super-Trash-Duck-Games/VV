@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.Rendering.ReloadAttribute;
 
 public class Model
 {
@@ -45,6 +46,13 @@ public class Model
             Decelerate();
 
             OnMove?.Invoke(x);
+
+        VelocityCap();
+    }
+
+    protected virtual void VelocityCap()
+    {
+        if (_rb2d.linearVelocity.magnitude > _ep.maxVelocity) _rb2d.linearVelocity = Vector2.ClampMagnitude(_rb2d.linearVelocity, _ep.maxVelocity);
     }
 
     protected virtual void Decelerate()

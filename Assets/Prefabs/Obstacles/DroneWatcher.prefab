@@ -340,7 +340,7 @@ MonoBehaviour:
   _followTime: 3
   _staticEye: {fileID: 518147026543893443}
   _watchingEye: {fileID: 9219915812239224964}
-  _speed: 5
+  _speed: 3
   _tolerance: 0.1
   _waypoints:
   - {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 2643435075586393840}
   - component: {fileID: 7099793394048328136}
   - component: {fileID: 6983648064618686722}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

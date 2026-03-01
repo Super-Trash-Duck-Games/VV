@@ -48,6 +48,12 @@ public class KKModel : Model
         base.Move(x);
     }
 
+    protected override void VelocityCap()
+    {
+        if (!_stompCollider.enabled)
+            base.VelocityCap();
+    }
+
     protected override void OnGrounded(bool grounded)
     {
         if (grounded)
@@ -269,7 +275,7 @@ public class KKModel : Model
             _rb2d.linearVelocity = Vector2.zero;
 
             if (timer > _package.specialHangTime)
-                yield break;
+                SpecialRelease();
 
             yield return null;
         }
@@ -279,7 +285,7 @@ public class KKModel : Model
         OnStomp?.Invoke();
     }
 
-    public void SpecialRelease()
+    public override void SpecialRelease()
     {
         _specialHanging = false;
     }

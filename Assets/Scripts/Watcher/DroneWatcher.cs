@@ -1,4 +1,5 @@
 using NUnit.Framework.Constraints;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,13 +12,13 @@ public class DroneWatcher : Watcher
 
     void Start()
     {
-        StartCoroutine(Patrol());
+        StartCoroutine(WaypointPatrol());
     }
 
-    private IEnumerator Patrol()
+    private IEnumerator WaypointPatrol()
     {
         int index = 0;
-        while (true)
+        while (!_isFollowing)
         {
             if (Vector2.Distance(transform.position, _waypoints[index].position) > _tolerance)
             {
@@ -31,6 +32,20 @@ public class DroneWatcher : Watcher
             }
             yield return null;
         }
+    }
+
+
+    protected override IEnumerator WatchKumKum()
+    {
+        var kk = FindFirstObjectByType<Kumkum>();
+        while (_isFollowing)
+        {
+            _eyePivot.LookAt(kk.transform.position);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(kk.transform.position.x, transform.position.y), _speed * Time.deltaTime / 2);
+            yield return null;
+        }
+        StartCoroutine(WaypointPatrol());
+
     }
 
     protected override void Activate()

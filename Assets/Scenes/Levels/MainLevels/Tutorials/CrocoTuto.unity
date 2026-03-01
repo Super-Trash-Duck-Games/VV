@@ -9751,7 +9751,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1867275145678349022, guid: bbc72a1c767acb542ada427aac444237, type: 3}
       propertyPath: _patrolAreaDistance
-      value: 9.8
+      value: 12.33
       objectReference: {fileID: 0}
     - target: {fileID: 2815559910763920145, guid: bbc72a1c767acb542ada427aac444237, type: 3}
       propertyPath: m_Name
@@ -9759,7 +9759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7484973392693326791, guid: bbc72a1c767acb542ada427aac444237, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.74
+      value: 8.16
       objectReference: {fileID: 0}
     - target: {fileID: 7484973392693326791, guid: bbc72a1c767acb542ada427aac444237, type: 3}
       propertyPath: m_LocalPosition.y
