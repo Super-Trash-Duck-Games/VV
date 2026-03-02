@@ -1058,6 +1058,10 @@ PrefabInstance:
       propertyPath: _door
       value: 
       objectReference: {fileID: 281836491}
+    - target: {fileID: 7372878927944591444, guid: 67b1295b98749374aad4106cc582ec9f, type: 3}
+      propertyPath: _doorLiftSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
