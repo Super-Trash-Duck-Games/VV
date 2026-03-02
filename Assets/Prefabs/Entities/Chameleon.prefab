@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebd8c1a549d5c6438b231372fa0c337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChGrappleDetector
+  _chameleon: {fileID: 1592296226986675340}
   _circleCol: {fileID: 0}
 --- !u!58 &5827943921085215739
 CircleCollider2D:

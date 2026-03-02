@@ -47,7 +47,7 @@ MonoBehaviour:
   speed: 6
   runSpeed: 10
   turnSpeed: 5
-  maxVelocity: 9
+  maxVelocity: 12
   deceleration: 4.88
   airControl: 10
   doubleJump: 0

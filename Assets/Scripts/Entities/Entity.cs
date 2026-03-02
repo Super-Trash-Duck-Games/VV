@@ -31,6 +31,8 @@ public abstract class Entity : MonoBehaviour
     public bool morphing;
     public AnimationEventListener _eventListener;
 
+    private Coroutine _restart;
+
     protected virtual void Start()
     {
         _ep = _chPackageGO.GetComponent<EntityPackage>();
@@ -144,8 +146,8 @@ public abstract class Entity : MonoBehaviour
 
     protected virtual void Death()
     {
-
-        StartCoroutine(Restart());
+        if (_restart == null)
+            _restart = StartCoroutine(Restart());
     }
 
     protected virtual IEnumerator Restart()
@@ -153,6 +155,7 @@ public abstract class Entity : MonoBehaviour
         yield return new WaitForSeconds(_restartDelay);
         string name = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(name);
+        Debug.Log("Focking restart oi");
     }
 
     protected virtual void OnDrawGizmos()

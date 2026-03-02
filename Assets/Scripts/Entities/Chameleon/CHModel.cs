@@ -5,6 +5,8 @@ public class CHModel : Model
     private Chameleon _chameleon;
     private CHPackage _chp;
     private bool _grappled;
+
+    private bool _ungrappled;
     public CHModel(Chameleon entity, Rigidbody2D rb2d, CHPackage chp) : base(entity, rb2d, chp)
     {
         _chameleon = entity;
@@ -29,6 +31,17 @@ public class CHModel : Model
         }
     }
 
+    protected override void VelocityCap()
+    {
+        if (!_ungrappled)
+            base.VelocityCap();
+    }
+
+    protected override void OnGrounded(bool grounded)
+    {
+        _ungrappled = false;
+    }
+
     public override void SpecialRelease()
     {
         if (!_grappled) return;
@@ -38,6 +51,7 @@ public class CHModel : Model
             _rb2d.AddForce(Vector2.up * _chp.ungrappleJumpForce, ForceMode2D.Impulse);
             _chameleon.fullyGrappled = false;
         }
+        _ungrappled = true;
     }
 
     public void AdjustGrappleLenght(float y)
