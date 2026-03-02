@@ -84,6 +84,7 @@ public class AIEnemy : MonoBehaviour
     {
         _rb2d = gameObject.AddComponent<Rigidbody2D>();
         _rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
         _anim = GetComponentInChildren<Animator>();
         view = new AIEnemyView(_anim);
     }

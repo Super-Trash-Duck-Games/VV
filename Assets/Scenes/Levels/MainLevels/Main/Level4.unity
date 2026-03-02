@@ -1058,10 +1058,6 @@ PrefabInstance:
       propertyPath: _door
       value: 
       objectReference: {fileID: 281836491}
-    - target: {fileID: 7372878927944591444, guid: 67b1295b98749374aad4106cc582ec9f, type: 3}
-      propertyPath: _doorLiftSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12516,11 +12512,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1622445332647320389, guid: 7c41656800f99084582f392227ff00d9, type: 3}
       propertyPath: _patrolAreaDistance
-      value: 1
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 3812557271025238721, guid: 7c41656800f99084582f392227ff00d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.42
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 3812557271025238721, guid: 7c41656800f99084582f392227ff00d9, type: 3}
       propertyPath: m_LocalPosition.y

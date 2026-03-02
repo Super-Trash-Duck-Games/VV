@@ -11,6 +11,7 @@ public class ZapMachine : MonoBehaviour
     [SerializeField] private float _oDoorYPos;
     [SerializeField] private float _doorMaxHeight;
     public Action<bool> doorOpen;
+    public float openTime;
     void Start()
     {
         if (_anim == null) _anim = GetComponent<Animator>();
@@ -66,6 +67,7 @@ public class ZapMachine : MonoBehaviour
 
         }
 
+        yield return new WaitForSeconds(openTime);
         _anim.SetBool("Red", false);
 
         while (_door.transform.position.y > _oDoorYPos)

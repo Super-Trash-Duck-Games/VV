@@ -19,6 +19,7 @@ public class DizzyState : State
 
     public override void OnEnter()
     {
+        _aie.currentState = AIEnemiesStates.Dizzy;
         _dizzyTimer = 0;
         _view.Dizzy(true);
         _aie.isDizzy = true;

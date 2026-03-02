@@ -50,8 +50,10 @@ MonoBehaviour:
   _anim: {fileID: 1004239377411970181}
   _onContact: 0
   _door: {fileID: 0}
-  _doorLiftSpeed: 2
+  _doorLiftSpeed: 0.5
+  _oDoorYPos: 0
   _doorMaxHeight: 10
+  openTime: 3
 --- !u!212 &87037312101737436
 SpriteRenderer:
   m_ObjectHideFlags: 0
